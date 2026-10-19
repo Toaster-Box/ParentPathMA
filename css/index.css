@@ -1,25 +1,121 @@
-/* Css here is for index.html only */
-/* find out some way to add padding to the left hand side */
-#body{ 
-    padding-bottom: 2rem;
+/* Home navbar logo */
+.navbar-logo {
+    display: block;
+    height: 32px;
+    width: auto;
 }
-.greyFrontPage{
-    background-color: lightgray;
+
+/* Home page */
+#body {
+    color: rgb(25, 63, 108);
 }
-.card-icon{
-    padding-left: 1rem;
-    padding-top: 1rem;
+.home-section {
+    margin: 0;
+    padding: 2rem 5vw;
 }
-#logoLanding{
-    padding-top: 5rem;
+.greyFrontPage {
+    background-color: rgb(245, 248, 252);
 }
-.card{
-    width: 18rem;
-    height: 13rem;
+h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
-.card-link{
+
+/* Hero */
+#logoLanding {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
+#logoLanding h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+#logoLanding p {
+    color: rgb(89, 89, 89);
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+#logoLanding .btn-primary {
+    background-color: rgb(25, 63, 108);
+    border-color: rgb(25, 63, 108);
+}
+.hero-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 15rem;
+    padding: 2rem;
+}
+
+.home-logo {
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+}
+
+/* Home cards */
+.card {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(191, 208, 224);
+    border-radius: 0.5rem;
+    color: rgb(25, 63, 108);
+}
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.card-text {
+    color: rgb(89, 89, 89);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+.card-icon {
+    padding: 1rem 1rem 0;
+}
+.service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.card-link {
     text-decoration: none;
 }
-#commonResources{
-    text-decoration: none;
+.card-link:focus-visible {
+    outline: 2px solid rgb(25, 63, 108);
+    outline-offset: 2px;
+}
+/* Important Information */
+.home-info-box {
+    margin: 1rem 5vw 2rem;
+    padding: 1.25rem;
+    border: 1px solid rgb(191, 208, 224);
+    background-color: rgb(245, 248, 252);
+}
+.home-info-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(230, 238, 247);
+    color: rgb(25, 63, 108);
+    font-size: 1.5rem;
+}
+.home-info-box p {
+    color: rgb(89, 89, 89);
+}
+
+/* Home footer logo */
+.footer-logo {
+    display: block;
+    width: 10rem;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.75rem;
 }

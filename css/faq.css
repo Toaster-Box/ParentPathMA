@@ -1,5 +1,6 @@
 /* FAQ Page */
 .faq-page {
+    color: rgb(25, 63, 108);
     padding: 2rem 5vw 2.5rem;
 }
 
@@ -32,18 +33,19 @@
 
 /* Help Section */
 .help-section {
-    background-color: #f0f0f0;
-    border: 1px solid #aaa;
+    background-color: rgb(245, 248, 252);
+    border: 1px solid rgb(191, 208, 224);
 }
 
 .help-section p {
-    color: #595959;
+    color: rgb(89, 89, 89);
     font-size: 0.875rem;
 }
 
 .help-icon {
     width: 3rem;
     height: 3rem;
-    background-color: #dedede;
+    background-color: rgb(230, 238, 247);
+    color: rgb(25, 63, 108);
     font-size: 1.5rem;
 }
