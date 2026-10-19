@@ -41,10 +41,11 @@
     <main class="find-services-page" id="body">
         <header class="page-intro">
             <h1>Find Services</h1>
-            <p>Search by keyword or browse by category to find the information you need.</p>
+            <p><!--Search by keyword or -->Browse by category to find the information you need.</p>
         </header>
 
         <!-- Search -->
+        <!-- Temp until search feature is actually in
         <section class="search-section">
             <label for="resourceSearch">Search for a service</label>
             <div class="search-box">
@@ -54,6 +55,7 @@
                 </button>
             </div>
         </section>
+        -->
 
         <!-- Categories -->
         <!-- data-category identifies each button's category for filtering -->
@@ -61,27 +63,27 @@
             <h2>Browse by Category</h2>
             <div class="category-list">
 
-                <button class="category-button" type="button" aria-pressed="false" data-category="healthcare">
+                <button class="category-button" type="button" aria-pressed="false" data-category="healthcare" id="HIButton">
                     <span class="category-icon badge-healthcare"><i class="bi bi-heart-pulse" aria-hidden="true"></i></span>
                     <span>Healthcare &amp; Health Insurance</span>
                 </button>
 
-                <button class="category-button" type="button" aria-pressed="false" data-category="benefits">
+                <button class="category-button" type="button" aria-pressed="false" data-category="benefits" id="FAButton">
                     <span class="category-icon badge-benefits"><i class="bi bi-wallet" aria-hidden="true"></i></span>
                     <span>Benefits &amp; Financial Assistance</span>
                 </button>
 
-                <button class="category-button" type="button" aria-pressed="false" data-category="parental">
+                <button class="category-button" type="button" aria-pressed="false" data-category="parental" id="PWButton">
                     <span class="category-icon badge-parental"><i class="bi bi-briefcase" aria-hidden="true"></i></span>
                     <span>Parental Leave &amp; Workplace Support</span>
                 </button>
 
-                <button class="category-button" type="button" aria-pressed="false" data-category="childcare">
+                <button class="category-button" type="button" aria-pressed="false" data-category="childcare" id="CEButton">
                     <span class="category-icon badge-childcare"><i class="bi bi-people" aria-hidden="true"></i></span>
                     <span>Childcare &amp; Education</span>
                 </button>
 
-                <button class="category-button" type="button" aria-pressed="false" data-category="immigrant">
+                <button class="category-button" type="button" aria-pressed="false" data-category="immigrant" id="ILSButton">
                     <span class="category-icon badge-immigrant"><i class="bi bi-globe2" aria-hidden="true"></i></span>
                     <span>Immigrant &amp; Language Services</span>
                 </button>
@@ -93,11 +95,114 @@
             <h2>Explore Resources</h2>
             <!-- Resource cards will be added here when filtering is connected. -->
             <div class="results-box" id="resourceResults">
-                <div class="empty-state">
+                <div class="empty-state" id="EmptyCardBox">
                     <i class="bi bi-search empty-icon" aria-hidden="true"></i>
                     <h3>Ready to find a resource?</h3>
-                    <p>Select a category above or use the search bar to get started.</p>
+                    <p>Select a category above <!-- or use the search bar --> to get started.</p>
                 </div>
+                
+                <row id="HealthCareCardSection"><!-- Section for the health cards --> <!-- While I would love to automatically generate content for these with a bit of JS, dont have the time to figure that out right now -->
+                    <div class="card mb-3" >
+					<div class="row g-0">
+						<div class="col-md-8">
+					  		<div class="card-body">
+								<h5 class="card-title">Healthcare</h5>
+								<p class=""></p>
+                                <a class="stretched-link" href=""></a>
+					  		</div>
+						</div>
+				  	</div>
+				    </div>
+                </row>
+                
+                <row id="BenefitsCardSection"> <!-- Section for the benifits cards --> 
+                    <div class="card mb-3" >
+					<div class="row g-0">
+						<div class="col-md-8">
+					  		<div class="card-body">
+								<h5 class="card-title">WIC</h5>
+								<p class="card-text">WIC (Women infant and Children) is a federal Supplemental Nutrition Program</p>
+                                <a class="stretched-link" href=""></a>
+					  		</div>
+						</div>
+				  	</div>
+				    </div>
+                    <div class="card mb-3" >
+					<div class="row g-0">
+						<div class="col-md-8">
+					  		<div class="card-body">
+								<h5 class="card-title">WIC</h5>
+								<p class="card-text">WIC (Women infant and Children) is a federal Supplemental Nutrition Program</p>
+                                <a class="stretched-link" href=""></a>
+					  		</div>
+						</div>
+				  	</div>
+				    </div>
+                    <div class="card mb-3" >
+					<div class="row g-0">
+						<div class="col-md-8">
+					  		<div class="card-body">
+								<h5 class="card-title">WIC</h5>
+								<p class="card-text">WIC (Women infant and Children) is a federal Supplemental Nutrition Program</p>
+                                <a class="stretched-link" href=""></a>
+					  		</div>
+						</div>
+				  	</div>
+				    </div>
+                    <div class="card mb-3" >
+					<div class="row g-0">
+						<div class="col-md-8">
+					  		<div class="card-body">
+								<h5 class="card-title">WIC</h5>
+								<p class="card-text">WIC (Women infant and Children) is a federal Supplemental Nutrition Program</p>
+                                <a class="stretched-link" href=""></a>
+					  		</div>
+						</div>
+				  	</div>
+				    </div>
+                </div>
+                
+                <row id="ParentLeaveCardSection">
+                    <div class="card mb-3" >
+					<div class="row g-0">
+						<div class="col-md-8">
+					  		<div class="card-body">
+								<h5 class="card-title">ParentLeaveCardSection</h5>
+								<p class=""></p>
+                                <a class="stretched-link" href=""></a>
+					  		</div>
+						</div>
+				  	</div>
+				    </div>
+                </row>
+                
+                <row id="ChildcareCardSection"> <!-- Section for the childcare cards --> 
+                    <div class="card mb-3" >
+					<div class="row g-0">
+						<div class="col-md-8">
+					  		<div class="card-body">
+								<h5 class="card-title">ChildcareCardSection</h5>
+								<p class="card-text"></p>
+                                <a class="stretched-link" href=""></a>
+					  		</div>
+						</div>
+				  	</div>
+				    </div>
+                </row>
+                
+                <row id="ImmigrantCardSectoion"> <!-- Section for the immigrant support cards --> 
+                    <div class="card mb-3" >
+					<div class="row g-0">
+						<div class="col-md-8">
+					  		<div class="card-body">
+								<h5 class="card-title">ImmigrantCardSectoion</h5>
+								<p class="card-text"></p>
+                                <a class="stretched-link" href=""></a>
+					  		</div>
+						</div>
+				  	</div>
+				    </div>
+                </row>
             </div>
         </section>
     </main>
