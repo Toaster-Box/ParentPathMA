@@ -24,8 +24,7 @@ categoryButtons.forEach((button) => {
             document.getElementById("EmptyCardBox").style.display = "none";
             IDList.forEach(id => { //clears any existing blocks on button
                 if (document.getElementById(id).style.display = "block"){
-                    console.log("ID Block cleared: "+id);
-                    document.getElementById(id).style.display = "none"
+                    document.getElementById(id).style.display = "none";
                 }
             }); 
         }
@@ -33,6 +32,8 @@ categoryButtons.forEach((button) => {
 });
 
 //button selection event to run func to display the cards
+//might be able to replace this with the onclick event in the button
+//passing via onclick doesnt work on <a> tags, pain and suffering
 document.getElementById("HIButton").onclick = function() {ServiceSelectionEvent("HealthCareCardSection")};
 document.getElementById("FAButton").onclick = function() {ServiceSelectionEvent("BenefitsCardSection")};
 document.getElementById("PWButton").onclick = function() {ServiceSelectionEvent("ParentLeaveCardSection")};
@@ -42,12 +43,9 @@ document.getElementById("ILSButton").onclick = function() {ServiceSelectionEvent
 //specific service selection
 function ServiceSelectionEvent(id) {
     const serviceId = document.getElementById(id);
-    console.log(serviceId);
-    console.log("Before:"+serviceId.style.display);
     if (serviceId.style.display == '' || serviceId.style.display == 'none') {
         serviceId.style.display = "block";
     } else {
         serviceId.style.display = "none";
     }
-    console.log("After:"+serviceId.style.display);
 } 
