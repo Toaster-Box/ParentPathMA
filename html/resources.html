@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-		<link href="../css/main_styles.css" rel="stylesheet" type="text/css">
-		<link href="../css/resources.css" rel="stylesheet" type="text/css">
+		<link href="/css/main_styles.css" rel="stylesheet" type="text/css">
+		<link href="/css/resources.css" rel="stylesheet" type="text/css">
 		<link rel="shortcut icon" href="#">
-		<title>Parent Path Resouces</title>
+		<title>Parent Path Resources</title>
 	</head>
 <body>
 	<!-- main page content goes here, aka everything unique to that page -->
@@ -51,21 +51,6 @@
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
-								<h5 class="card-title">What can it help with?</h5>
-								<ul class="card-text">
-									<li id="ResourceHelpInfo"></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div> 
-				<div class="card mb-3">
-					<div class="row g-0">
-						<div class="col-md-1">
-							<img src="#" class="img-fluid rounded-start" alt="...">
-						</div>
-						<div class="col-md-8">
-							<div class="card-body">
 								<h5 class="card-title">What should I know?</h5>
 								<p class="card-text" id="ResourceImportInfo"></p>
 							</div>
@@ -75,7 +60,6 @@
 			</div> 
 			
 			<div class="col-md-4">
-				
 				<div class="card mb-3">
 					<div class="card-body">
 						<img src="" alt="Image for Program/Agency">
@@ -107,18 +91,30 @@
 
 					</h3>
 					<div class="card-body">
-						<h5 class="card-title">Related Resources</h5>
+						<h5 class="card-title">Related Resource Links</h5>
 						<div class="card-text">
-							<p class="py-2" id="ResourceRelatedExplanation1"></p>
-							<a class="btn btn-primary" id="ResourceRelatedLink1">Go To</a>
-							<p class="py-2" id="ResourceRelatedExplanation2"></p>
-							<a class="btn btn-primary" id="ResourceRelatedLink2">Go To</a>
-							<p class="py-2" id="ResourceRelatedExplanation3"></p>
-							<a class="btn btn-primary" id="ResourceRelatedLink3">Go To</a>
-							<p class="py-2" id="ResourceRelatedExplanation4"></p>
-							<a class="btn btn-primary" id="ResourceRelatedLink4">Go To</a>
-							<p class="py-2" id="ResourceRelatedExplanation5"></p>
-							<a class="btn btn-primary" id="ResourceRelatedLink5">Go To</a>
+							<ul>
+								<li style="display: none;" class="py-2">
+									<a class="btn btn-primary" id="ResourceRelatedLink1">Go To</a>
+									<div id="ResourceRelatedExplanation1"></div>
+								</li>
+								<li style="display: none;" class="py-2">
+									<a class="btn btn-primary" id="ResourceRelatedLink2">Go To</a>
+									<div id="ResourceRelatedExplanation2"></div>
+								</li>
+								<li style="display: none;" class="py-2">
+									<a class="btn btn-primary" id="ResourceRelatedLink3">Go To</a>
+									<div id="ResourceRelatedExplanation3"></div>
+								</li>
+								<li style="display: none;" class="py-2">
+									<a class="btn btn-primary" id="ResourceRelatedLink4">Go To</a>
+									<div id="ResourceRelatedExplanation4"></div>
+								</li>
+								<li style="display: none;" class="py-2">
+									<a class="btn btn-primary" id="ResourceRelatedLink5">Go To</a>
+									<div id="ResourceRelatedExplanation5"></div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -134,5 +130,5 @@
 			</div>
 		</div>
 	</main>
-	<script src="../JavaScript/resources.js"></script>
+	<script src="/JavaScript/resources.js"></script>
 </body>
