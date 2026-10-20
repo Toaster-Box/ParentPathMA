@@ -1,7 +1,7 @@
 import csv
 import sys
 
-# Input the whole file name with /CSVfiles as the path, make sure this script is in where you want the JSON file created
+# Input the whole file name with CSVfiles/[NAME].csv in the path, make sure this script is in where you want the JSON file created
 file = sys.argv[1]
 temp = file.split(".")
 rFileName = temp[0].split("/")

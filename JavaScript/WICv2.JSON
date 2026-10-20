@@ -1,0 +1,15 @@
+{
+	"category":"Benefit / Service",
+	"org":"U.S. Department of Agriculture: Food and Nutrition Administration",
+	"description":"WIC is a federal Supplemental Nutrition Program that runs locally through state clinics with the aim to help provide healthy foods, personalized nutrition education, and breastfeeding support.",
+	"whatThisIs":"WIC provides eligible participants with benefits to purchase approved nutritious foods, as well as personalized nutrition education, breastfeeding support, health screenings, and referrals to other services",
+	"link":"https://www.mass.gov/orgs/women-infants-children-nutrition-program",
+	"relatedLink":["https://wicclinics.com/massachusetts/", "https://www.mass.gov/info-details/find-wic-approved-stores", "https://wicbreastfeeding.fna.usda.gov/",  "https://www.fna.usda.gov/wic/eligibility-tool", "https://www.mass.gov/info-details/wic-resources-for-pregnancy-infant-nutrition-and-breastfeeding#popular-infant-nutrition-topics"],
+	"relatedLinkExplanation":["Find a Clinic near you", "Approved Store list in Mass", "Breastfeeding Suppourt", "Eligibility Checker", "Provides Popular Nutrion Resources"],
+	"application":"https://www.mass.gov/forms/apply-for-wic-online",
+	"whoItHelps":"Individuals who are currently pregnant or Postpartum (up to 6 months after the end of a pregnancy, Those who are breastfeeding, up to the infant's first birthday.,  Parents and caregivers of infants and children under age five, including fathers, grandparents, guardians, and other eligible caregivers applying on a child's behalf.",
+	"whatItHelps":"",
+	"whatToKnow":["If you have previously been rejected from federal programs due to income, keep in mind with the new child your household has changed an you may now qualify.", "Nutrition education: Offers guidance on healthy eating, pregnancy nutrition, infant feeding, and children's nutritional needs", "Breastfeeding support: Provides education, counseling, and assistance with breastfeeding."],
+	"lastUpdated":"10/7/2026",
+	"name":"WIC (Women Children & Infant)"
+}
