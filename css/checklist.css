@@ -1,14 +1,15 @@
 /* My ParentPath (Checklist) */
 .checklist-page {
+    color: rgb(25, 63, 108);
     padding: 2rem 5vw 2.5rem;
 }
 .checklist-subtitle {
-    color: #595959;
+    color: rgb(89, 89, 89);
 }
 
 /* Progress */
 .progress-card {
-    border: 1px solid #aaa;
+    border: 1px solid rgb(191, 208, 224);
     background-color: white;
 }
 #progressTrack {
@@ -22,7 +23,7 @@
 
 /* Checklist sections (same accordion look as the FAQ page) */
 .checklist-list {
-    --bs-accordion-border-color: #aaa;
+    --bs-accordion-border-color: rgb(191, 208, 224);
     --bs-accordion-btn-padding-x: 1rem;
     --bs-accordion-btn-padding-y: 1rem;
 }
@@ -44,19 +45,23 @@
     display: block;
     font-size: 0.875rem;
     font-weight: normal;
-    color: #595959;
+    color: rgb(89, 89, 89);
 }
 
 /* Sidebar */
+.checklist-page .card {
+    border-color: rgb(191, 208, 224);
+    color: rgb(25, 63, 108);
+}
 .saved-link {
     color: inherit;
 }
 .saved-empty {
-    color: #595959;
+    color: rgb(89, 89, 89);
     font-size: 0.875rem;
 }
 .saved-note {
-    color: #595959;
+    color: rgb(89, 89, 89);
     font-size: 0.875rem;
 }
 
