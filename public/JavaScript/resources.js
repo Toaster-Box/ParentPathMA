@@ -36,8 +36,26 @@ async function loadJSON(file) {
 
 	//Updated date
 	document.getElementById("ResourceLastUpdated").innerText = resourceData.lastUpdated;
+	// Save Resource button (used by the My ParentPath checklist)
+	const saveButton = document.querySelector("#ResourceModal .save-resource-button");
+	if (saveButton) {
+		saveButton.dataset.id = file;
+		saveButton.dataset.name = resourceData.name;
+		saveButton.dataset.category = resourceData.categoryKey || "";
+		saveButton.dataset.url = "/html/find-services.html?resource=" + encodeURIComponent(file);
+	}
+
   }
   catch(err) {console.log(err.message)}
 }
 
+// Open a resource directly from a link such as find-services.html?resource=...
+const requestedResource = new URLSearchParams(window.location.search).get("resource");
+if (requestedResource && /^\/JavaScript\/[\w-]+\.JSON$/.test(requestedResource)) {
+	loadJSON(requestedResource);
+	const resourceModal = document.getElementById("ResourceModal");
+	if (resourceModal) {
+		bootstrap.Modal.getOrCreateInstance(resourceModal).show();
+	}
+}
 
