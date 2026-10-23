@@ -7,5 +7,9 @@
   "scripts": {
     "start": "npx --yes http-server . -p 8080 -c-1",
     "build": "echo 'no build'"
+  },
+  "dependencies": {
+    "@firebase-oss/ui-react": "^7.0.3",
+    "@firebase-oss/ui-styles": "^7.1.0"
   }
 }
