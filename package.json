@@ -1,0 +1,20 @@
+{
+  "name": "it-485_capstone",
+  "version": "1.0.0",
+  "description": "This is the capstone project for Jaleesa Jackson, Chaya Spencer, Evan Hall, Francisco Miranda, and Waleed Ahmed",
+  "homepage": "https://github.com/Toaster-Box/IT-485_Capstone#readme",
+  "bugs": {
+    "url": "https://github.com/Toaster-Box/IT-485_Capstone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toaster-Box/IT-485_Capstone.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
