@@ -1,0 +1,11 @@
+{
+  "name": "parentpath",
+  "version": "1.0.0",
+  "description": "ParentPath static website (UMass Boston IT 485 capstone)",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "npx --yes http-server . -p 8080 -c-1",
+    "build": "echo 'no build'"
+  }
+}
