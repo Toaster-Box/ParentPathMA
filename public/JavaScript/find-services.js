@@ -53,3 +53,11 @@ function ServiceSelectionEvent(id, button) {
         serviceId.classList.remove('d-none');
     }
 } 
+// Reads the category from the homepage URL and automatically selects its matching button
+const params = new URLSearchParams(window.location.search);
+const category = params.get('category');
+categoryButtons.forEach((button) => {
+    if (button.dataset.category === category) {
+        button.click();
+    }
+});

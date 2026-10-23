@@ -137,56 +137,57 @@
         <!-- Explore Our Services -->
         <div class="row g-3 home-section">
             <h2 class="col-12">Explore Our Services</h2>
+            <!-- Reserves space for service titles so descriptions align across cards nicely -->
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="html/find-services.html" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=healthcare" class="card-link d-block h-100">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-healthcare"><i class="bi bi-heart-pulse" aria-hidden="true"></i></span>
-                            <h3 class="card-title">Healthcare &amp; Health Insurance</h3>
+                            <h3 class="card-title service-card-title">Healthcare &amp; Health Insurance</h3>
                             <p class="card-text">Health coverage, care and wellness support</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="html/find-services.html" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=benefits" class="card-link d-block h-100">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-benefits"><i class="bi bi-wallet" aria-hidden="true"></i></span>
-                            <h3 class="card-title">Benefits &amp; Financial Assistance</h3>
+                            <h3 class="card-title service-card-title">Benefits &amp; Financial Assistance</h3>
                             <p class="card-text">Food, housing and financial assistance</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="html/find-services.html" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=parental" class="card-link d-block h-100">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-parental"><i class="bi bi-briefcase" aria-hidden="true"></i></span>
-                            <h3 class="card-title">Parental Leave &amp; Workplace Support</h3>
+                            <h3 class="card-title service-card-title">Parental Leave &amp; Workplace Support</h3>
                             <p class="card-text">Leave, workplace and parent resources</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="html/find-services.html" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=childcare" class="card-link d-block h-100">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-childcare"><i class="bi bi-people" aria-hidden="true"></i></span>
-                            <h3 class="card-title">Childcare &amp; Education</h3>
+                            <h3 class="card-title service-card-title">Childcare &amp; Education</h3>
                             <p class="card-text">Childcare, learning and school services</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="html/find-services.html" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=immigrant" class="card-link d-block h-100">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-immigrant"><i class="bi bi-globe2" aria-hidden="true"></i></span>
-                            <h3 class="card-title">Immigrant &amp; Language Services</h3>
+                            <h3 class="card-title service-card-title">Immigrant &amp; Language Services</h3>
                             <p class="card-text">Language access and newcomer support</p>
                         </div>
                     </div>
@@ -198,41 +199,47 @@
             <h2 class="col-12">Commonly Used Resources</h2>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h3 class="card-title">MassHealth</h3>
-                        <a href="https://www.mass.gov/orgs/masshealth" class="card-link">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                        <p class="card-text">Health coverage and medical benefits for eligible Massachusetts residents.</p>
+                        <!-- Keeps Learn More links bottom-aligned (mt-auto) while also preventing the text and arrow from wrapping (text-nowrap) -->
+                        <a href="https://www.mass.gov/orgs/masshealth" class="card-link mt-auto text-nowrap">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h3 class="card-title">WIC Nutrition Program</h3>
-                        <a href="#" class="card-link">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                        <p class="card-text">Healthy foods, nutrition education, and breastfeeding support for eligible families.</p>
+                        <a href="https://www.mass.gov/orgs/women-infants-children-nutrition-program" class="card-link mt-auto text-nowrap">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h3 class="card-title">Massachusetts PFML</h3>
-                        <a href="#" class="card-link">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                        <p class="card-text">Paid time off for eligible workers managing family or medical needs.</p>
+                        <a href="https://www.mass.gov/topics/paid-family-and-medical-leave-in-massachusetts" class="card-link mt-auto text-nowrap">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h3 class="card-title">Snap Benefits</h3>
-                        <a href="#" class="card-link">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                        <p class="card-text">Food assistance that helps eligible households afford groceries.</p>
+                        <a href="https://www.mass.gov/how-to/supplemental-nutrition-assistance-program-snap-formerly-known-as-food-stamps" class="card-link mt-auto text-nowrap">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h3 class="card-title">Childcare Financial Assistance</h3>
-                        <a href="#" class="card-link">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                        <p class="card-text">Financial assistance to help eligible families pay for childcare and out-of-school programs.</p>
+                        <a href="https://www.mass.gov/child-care-financial-assistance" class="card-link mt-auto text-nowrap">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>

@@ -63,6 +63,10 @@ h2 {
     font-weight: 700;
     line-height: 1.5;
 }
+/* Reserves some space for longer resource title descriptions so they horizontally align */
+.service-card-title {
+    min-height: 2.5rem;
+}
 .card-text {
     color: rgb(89, 89, 89);
     font-size: 0.875rem;
