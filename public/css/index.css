@@ -1,9 +1,4 @@
-/* Home navbar logo */
-.navbar-logo {
-    display: block;
-    height: 32px;
-    width: auto;
-}
+
 
 /* Home page */
 #body {
@@ -111,11 +106,3 @@ h2 {
     color: rgb(89, 89, 89);
 }
 
-/* Home footer logo */
-.footer-logo {
-    display: block;
-    width: 10rem;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 0.75rem;
-}

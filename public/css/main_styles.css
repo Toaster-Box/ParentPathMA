@@ -66,3 +66,18 @@ footer .row{
     color: rgb(20, 90, 160);
 }
  
+/* Navbar logo */
+.navbar-logo {
+    display: block;
+    height: 32px;
+    width: auto;
+}
+
+/* Footer logo */
+.footer-logo {
+    display: block;
+    width: 10rem;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.75rem;
+}

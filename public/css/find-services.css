@@ -144,6 +144,10 @@
     border-radius: 0.5rem;
     background-color: white;
 }
+/* Expands the results of the category section's content width post filter */
+.results-box.showing-resources {
+    max-width: 100%;
+}
 .empty-state {
     padding: 2.5rem 1rem;
     text-align: center;
