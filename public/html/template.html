@@ -29,8 +29,18 @@
                             
                     </ul>
                     <div class="navbar-nav">
-                            <a class="nav-link d-none d-lg-block" href="#google_translate_element">EN|ES</a>
+                        <a class="nav-link d-none d-lg-block" href="#google_translate_element">EN|ES</a>
                         <button type="button" class="btn btn-primary" id="logInButton">Log in</button>
+                        <div style="display: none;" class="dropdown" id="UserInfoDrop">
+                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                <i class="bi bi-person-fill"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-start">
+                                <li><h6 class="dropdown-header" id="UserGreet"></h6></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <button type="button" class="btn btn-danger dropdown-item" id="logOutButton">Log Out</button>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
