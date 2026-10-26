@@ -15,9 +15,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 var provider = new firebase.auth.GoogleAuthProvider();
+const auth = firebase.auth()
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
-
+const user = firebase.auth().currentUser;
+if (user !== null){
+	getUserInfo(user);
+}
 
 document.getElementById("logInButton").onclick = function() {firebase.auth()
   .signInWithPopup(provider)
@@ -30,7 +34,6 @@ document.getElementById("logInButton").onclick = function() {firebase.auth()
     // The signed-in user info.
     var user = result.user;
     // IdP data available in result.additionalUserInfo.profile.
-      // ...
   }).catch((error) => {
     // Handle Errors here.
     var errorCode = error.code;
@@ -39,5 +42,31 @@ document.getElementById("logInButton").onclick = function() {firebase.auth()
     var email = error.email;
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
-    // ...
+    console.log("Error:" + errorCode + " " + errorMessage)
   });};
+
+
+const authObserver = auth.onAuthStateChanged((user) => {
+  if (user) {
+    getUserInfo(user);
+  }
+  else{
+	document.getElementById("logInButton").style.display = "block"
+	document.getElementById("UserInfoDrop").style.display = "none"
+  }
+})
+  
+function getUserInfo(user){
+	document.getElementById("logInButton").style.display = "none"
+	document.getElementById("UserInfoDrop").style.display = "block"
+    //document.getElementById("UserGreet").innerText = "Greetings,\n" + user.DisplayName;
+}
+
+document.getElementById("logOutButton").onclick = function() {
+	firebase.auth().signOut().then(function() {
+  	// Sign-out successful.
+	}).catch(function(error) {
+  	// An error happened.
+	console.log(error)
+	});
+}

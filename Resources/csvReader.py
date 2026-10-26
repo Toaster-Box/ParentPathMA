@@ -13,6 +13,7 @@ with open(file,"r") as f:
     x = 0
     for str in content:
         content[x] = str.replace("[","").replace("]","").strip()
+        content[x] = str.replace("\n","")
         x += 1
     f.close()
 
@@ -23,12 +24,12 @@ with open(rFileName[1]+".JSON","w") as rfile:
     rfile.write("\t\"description\":\""            + content[2] + "\",\n")
     rfile.write("\t\"whatThisIs\":\""             + content[3] + "\",\n")
     rfile.write("\t\"link\":\""                   + content[4] + "\",\n")
-    rfile.write("\t\"relatedLink\":\""            + content[5] + "\",\n")
-    rfile.write("\t\"relatedLinkExplanation\":\"" + content[6] + "\",\n")
+    rfile.write("\t\"relatedLink\":"              + content[5] + ",\n")
+    rfile.write("\t\"relatedLinkExplanation\":"   + content[6] + ",\n")
     rfile.write("\t\"application\":\""            + content[7] + "\",\n")
-    rfile.write("\t\"whoItHelps\":\""             + content[8] + "\",\n")
+    rfile.write("\t\"whoItHelps\":"               + content[8] + ",\n")
     rfile.write("\t\"whatItHelps\":\""            + content[9] + "\",\n")
-    rfile.write("\t\"whatToKnow\":\""             + content[10] + "\",\n")
+    rfile.write("\t\"whatToKnow\":"               + content[10] + ",\n")
     rfile.write("\t\"lastUpdated\":\""            + content[11] + "\",\n")
     rfile.write("\t\"name\":\""                   + content[12] + "\"\n")
     rfile.write("}")
