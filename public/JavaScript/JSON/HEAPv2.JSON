@@ -1,0 +1,15 @@
+{
+	"category":"Benefits & Financial Assistence",
+	"org":"Executive Office of Housing and Livable Communities (EOHLC)",
+	"description":"Utility Assistance  ",
+	"whatThisIs":"[State assistance for income-eligible families and individuals to help lower your utility bills.  This program specifically runs during the winter months, with applications opening on October 1st this year.Fammlies must apply each year and the amount of aid given may change year to year based on HEAPs received funding. If eligible and accepted the payments will go directly to the utility companies.]",
+	"link":"[https://www.mass.gov/info-details/learn-about-home-energy-assistance-heap]",
+	"relatedLink":["https://www.mass.gov/info-details/help-paying-your-utility-bill"],
+	"relatedLinkExplanation":["MA help for Utilities"],
+	"application":"[https://www.toapply.org/MassHEAP]",
+	"whoItHelps":["Massachusts residents struggling to pay their utility bills"],
+	"whatItHelps":"",
+	"whatToKnow":["Those whose Income Eligibility does not exceed  60% of Massachusetts estimated State Median Income”,”You can apply online, in-person or by mail"],
+	"lastUpdated":"10/19/2026",
+	"name":"Massachusetts Home Energy Assistance Program (HEAP)"
+}
