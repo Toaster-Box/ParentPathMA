@@ -1,15 +1,21 @@
 {
-	"category":"Benefits & Financial Assitance",
-	"org":"Deparment of Transitional Assistance (DTA)",
-	"description":"Food Assitence for famlies with school-age Children",
-	"whatThisIs":"[Food Assitence for famlies with school-age Children.]",
-	"link":"[https://www.mass.gov/massachusetts-sun-bucks-program]",
+	"category":"Benefits & Financial Assistance",
+	"org":"Department of Transitional Assistance (DTA)",
+	"description":"Food assistance for families with school-aged children.",
+	"whatThisIs":"Food assistance for families with school-aged children.",
+	"link":"https://www.mass.gov/massachusetts-sun-bucks-program",
 	"relatedLink":["https://dtaconnect.eohhs.mass.gov/"],
 	"relatedLinkExplanation":["DTA"],
-	"application":"[https://dtaconnect.eohhs.mass.gov/sunBucks?_gl=1*1oqrbq*_ga*NDM5NzUyMjI0LjE3NTg5MDc0NzQ.*_ga_SW2TVH2WBY*czE3OTI0MjgzNTQkbzMkZzEkdDE3OTI0Mjg2MzEkajYwJGwwJGgw]",
-	"whoItHelps":["Families who rely on school lunches looking for extra food support for their children","Families with school aged children who are currently receiving SNAP, DTA cash benefits, certain types of MassHealth coverage, SSI with a relative caregiver, or is in foster care."],
+	"application":"https://dtaconnect.eohhs.mass.gov/sunBucks?_gl=1*1oqrbq*_ga*NDM5NzUyMjI0LjE3NTg5MDc0NzQ.*_ga_SW2TVH2WBY*czE3OTI0MjgzNTQkbzMkZzEkdDE3OTI0Mjg2MzEkajYwJGwwJGgw",
+	"whoItHelps":[
+		"Families who rely on school lunches and are looking for extra food support for their children.",
+		"Families with school aged children who are currently receiving SNAP, DTA cash benefits, certain types of MassHealth coverage, SSI with a relative caregiver, or is in foster care."
+	],
 	"whatItHelps":"",
-	"whatToKnow": ["The SUN buck program does automatically enroll some individuals but you may also apply on the DTA’s website.","The SUN buck’ application does not close once summer begins, the summer 2026 Application closed September 6th 2026. The Summer 2027 portal had already opened for applications"] ,
+	"whatToKnow": [
+		"The SUN Bucks program automatically enrolls some individuals, but you may also apply on the DTA’s website.",
+		"The SUN Bucks application does not close once summer begins. The summer 2026 application closed September 6th 2026. The summer 2027 portal had already opened for applications."
+	] ,
 	"lastUpdated":"10/19/2026",
 	"name":"SUN Bucks"
 }

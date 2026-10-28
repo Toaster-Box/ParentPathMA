@@ -1,8 +1,176 @@
-#body{
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-.card-icon{
-    padding-left: 1rem;
-    padding-top: 1rem;
+/* Keeps detail styles inside the modal, separate from the Find Services cards */
+#ResourceModal {
+    .resource-detail {
+        background-color: rgb(245, 248, 252);
+        color: rgb(25, 63, 108);
+        border: 0;
+        border-radius: 0.75rem;
+    }
+
+    .resource-controls {
+        padding: 1.5rem 2rem 0;
+        border: 0;
+    }
+
+    .modal-body {
+        padding: 1.5rem 2rem 2rem;
+    }
+
+    .resource-back {
+        padding: 0;
+        text-decoration: none;
+    }
+
+    .save-resource-button {
+        border-color: rgb(25, 63, 108);
+        color: rgb(25, 63, 108);
+        font-weight: 600;
+    }
+
+    .save-resource-button:hover,
+    .save-resource-button.active {
+        background-color: rgb(25, 63, 108);
+        color: white;
+    }
+
+    .resource-category {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        margin-bottom: 0.75rem;
+        border-radius: 2rem;
+        background-color: rgb(230, 238, 247);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    & h1 {
+        margin-bottom: 0.75rem;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .resource-summary {
+        font-size: 0.875rem;
+    }
+
+    .resource-panel {
+        padding: 1.25rem;
+        border: 1px solid rgb(191, 208, 224);
+        border-radius: 0.5rem;
+        background-color: white;
+        box-shadow: 0 0.125rem 0.25rem rgb(230, 238, 247);
+    }
+
+    .resource-panel-content {
+        min-width: 0;
+        flex-grow: 1;
+    }
+
+    & h2 {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    .resource-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        background-color: rgb(230, 238, 247);
+        font-size: 1.25rem;
+    }
+
+    .resource-panel p:last-child,
+    .resource-panel ul:last-child {
+        margin-bottom: 0;
+    }
+
+    .resource-panel ul {
+        padding-left: 1.25rem;
+    }
+
+    .resource-panel li + li {
+        margin-top: 0.5rem;
+    }
+
+    .resource-panel-content,
+    .resource-summary,
+    .resource-metadata dd {
+        color: rgb(82, 106, 132);
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    .resource-panel-content h2 {
+        color: rgb(25, 63, 108);
+    }
+
+    .resource-metadata {
+        padding-top: 0.75rem;
+        border-top: 1px solid rgb(191, 208, 224);
+        font-size: 0.875rem;
+    }
+
+    .resource-metadata dt {
+        margin-bottom: 0.25rem;
+    }
+
+    .resource-official {
+        width: 100%;
+        background-color: rgb(20, 47, 85);
+        border-color: rgb(20, 47, 85);
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    & ul.resource-related {
+        padding-left: 0;
+    }
+
+    .resource-related a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        background-color: rgb(245, 248, 252);
+        color: rgb(25, 63, 108);
+        text-decoration: none;
+        overflow-wrap: anywhere;
+    }
+
+    .resource-related a:hover {
+        text-decoration: underline;
+    }
+
+    .resource-updated {
+        color: rgb(82, 106, 132);
+        font-size: 0.75rem;
+    }
+
+    /* Reduces padding so stacked modal content fits smaller screens */
+    @media (max-width: 767px) {
+        .resource-controls {
+            padding: 1rem 1rem 0;
+        }
+
+        .modal-body {
+            padding: 1rem;
+        }
+
+        & h1 {
+            font-size: 1.5rem;
+        }
+
+        .resource-panel {
+            padding: 1rem;
+        }
+    }
 }

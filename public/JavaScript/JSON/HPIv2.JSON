@@ -1,15 +1,19 @@
 {
 	"category":"Healthcare & Health Insurance",
-	"org":"Postpartum Support International ",
+	"org":"Postpartum Support International",
 	"description":"",
-	"whatThisIs":"[Offers Several support avenues such as Peer Mentor Program, Chatting with Experts, Support Navigators and Lived Experience Specialists, and help Find a Provider that specializes in perinatal mental health professionals.]",
-	"link":"[https://postpartum.net/get-help/help-for-moms/]",
-	"relatedLink":"",
-	"relatedLinkExplanation":"",
+	"whatThisIs":"Offers several forms of support, such as the Peer Mentor Program, Chatting with Experts, Support Navigators and Lived Experience Specialists, and help finding a provider who specializes in perinatal mental health.",
+	"link":"https://postpartum.net/get-help/help-for-moms/",
+	"relatedLink":[],
+	"relatedLinkExplanation":[],
 	"application":"",
 	"whoItHelps":["Perinatal (close to birth or in postpartum) individuals/moms looking for mental health support."] ,
 	"whatItHelps":"",
-	"whatToKnow":["Peer Mentor Program offers a matching program to you and another recovering from Perinatal Mental Health Disorders.They alongside trained volunteers who have lived through and recovered from similar experiences, will help in creating a peer-to-peer environment”,”In Chat(s) with an expert, you can talk with a PSI expert about symptoms, resources, treatment options and more. PSI experts will be licensed individuals in mental health and can be contacted via phone. These chats are targeted into two groups of Moms and Dads.”,”SN’s & Specialists and ‘Help find a Provider’ both help in finding local qualified individuals"],
+	"whatToKnow":[
+		"The Peer Mentor Program matches you with another person recovering from perinatal mental health disorders. Alongside trained volunteers who have lived through and recovered from similar experiences, they help create a peer-to-peer environment.",
+		"In Chat(s) with an Expert, you can talk with a PSI expert about symptoms, resources, treatment options, and more. PSI experts are licensed mental health professionals and can be contacted by phone. These chats are organized into two groups: moms and dads.",
+		"SNs, specialists, and “Help Find a Provider” help you find qualified local individuals."
+	],
 	"lastUpdated":"10/19/2026",
 	"name":"Help for Perinatal Individuals"
 }

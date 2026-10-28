@@ -2,14 +2,25 @@
 	"category":"Healthcare & Health Insurance",
 	"org":"Legal Key Partnership for Health and Justice",
 	"description":"",
-	"whatThisIs":"[An open-access tool meant to keep Massachusetts residents apprised in policy and law changes regarding, to name a few,  Healthcare, Immigrations, Education & Childcare, Utility needs, and Court Navigation.]",
-	"link":"[https://legalkeypartnership.org/digital-digest/ma/]",
-	"relatedLink":"[https://legalkeypartnership.org/digital-digest/federal/]",
-	"relatedLinkExplanation":"[Digital Digest - Federal]",
+	"whatThisIs":"An open access tool meant to keep Massachusetts residents apprised of policy and law changes regarding, to name a few, healthcare, immigration, education and childcare, utility needs, and court navigation.",
+	"link":"https://legalkeypartnership.org/digital-digest/ma/",
+	"relatedLink":[
+		"https://legalkeypartnership.org/digital-digest/federal/"
+	],
+	"relatedLinkExplanation":[
+		"Digital Digest - Federal"
+	],
 	"application":"",
-	"whoItHelps":"[Families and individuals who would like to be aware of changes or the start of policy in Massachusetts]",
+	"whoItHelps":[
+		"Families and individuals who would like to be aware of changes to or the introduction of policies in Massachusetts."
+	],
 	"whatItHelps":"",
-	"whatToKnow":"[“It is a free resource that updates regardly”,”While this site regularly speaks on topics of the law , it is a purely educational resource and not meant to be treated as legal advice.”,”Digital Digest is a free resources, that is also provided with focus on the Federal Level”,”While Legal Key Partnership for Health and Justice offers this free resource it also partners with outside organizations to offer trainings and constellations that are unfortunately not available to the wider public.”]",
+	"whatToKnow":[
+		"It is a free resource that updates regularly.",
+		"While this site regularly discusses topics related to the law, it is a purely educational resource and is not meant to be treated as legal advice.",
+		"Digital Digest is a free resource that also covers the federal level.",
+		"While Legal Key Partnership for Health and Justice offers this free resource it also partners with outside organizations to offer trainings and constellations that are unfortunately not available to the wider public."
+	],
 	"lastUpdated":"10/19/2026",
 	"name":"Digital Digest - Massachusetts"
 }

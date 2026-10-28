@@ -1,15 +1,26 @@
 {
-	"category":"Healthcare, Benfit",
-	"org":"MassHealth Transportation Services",
-	"description":"Non-emergency Transportation Services to Medical Appointments",
-	"whatThisIs":"The PT-1 program allows eligible MassHealth members to request non-emergency transportation to covered medical appointments. When transportation is medically necessary and approved, a member may be able to arrange rides to and from appointments.",
-	"link":"https://www.mass.gov/media/7186/download",
-	"relatedLink":["https://www.mass.gov/how-to/request-transportation-for-a-member"],
-	"relatedLinkExplanation":["To learn more about PT-1 view the Mass.gov overview"],
-	"application":"PT-1 must first be referred by your primary care office.",
-	"whoItHelps":"Any one on MassHealth member within a category that includes transportation-eligible coverage you need help getting to medical appointments., MassHealth members who have difficulty getting to medical appointments because of transportation barriers., Individuals who do not have access to a reliable vehicle or other transportation. Members who need transportation to recurring medical appointments.",
-	"whatItHelps":"",
-	"whatToKnow":"Your MassHealth medical provider must start the paperwork to refer to you, you can speak to them about starting this process by calling your primary care providers office at which they will have their own process for next steps., You will need to be a MassHealth member within a category that includes transportation-eligible coverage (Standard, CommonHealth, CarePlus, or others)., Transportation arrangements, including pickup times and return trips, should be confirmed before your appointment.",
-	"lastUpdated":"10/7/2026",
-	"name":"PT-1"
+    "category": "Healthcare, Benefit",
+    "org": "MassHealth Transportation Services",
+    "description": "Non-emergency transportation services to medical appointments.",
+    "whatThisIs": "The PT-1 program allows eligible MassHealth members to request non-emergency transportation to covered medical appointments. When transportation is medically necessary and approved, a member may be able to arrange rides to and from appointments.",
+    "link": "https://www.mass.gov/media/7186/download",
+    "relatedLink": [
+        "https://www.mass.gov/how-to/request-transportation-for-a-member"
+    ],
+    "relatedLinkExplanation": [
+        "To learn more about PT-1, view the Mass.gov overview."
+    ],
+    "application": "PT-1 must first be referred by your primary care office.",
+    "whoItHelps": [
+		"MassHealth members within a category that includes transportation-eligible coverage who need help getting to medical appointments.",
+		"This includes members who have difficulty getting to appointments because of transportation barriers, individuals who do not have access to a reliable vehicle or other transportation, and members who need transportation to recurring medical appointments."
+	],
+    "whatItHelps": "",
+    "whatToKnow": [
+        "Your MassHealth medical provider must start the paperwork to refer you. You can begin this process by calling your primary care provider's office, which will have its own process for next steps.",
+        "You will need to be a MassHealth member within a category that includes transportation-eligible coverage (Standard, CommonHealth, CarePlus, or others).",
+        "Transportation arrangements, including pickup times and return trips, should be confirmed before your appointment."
+    ],
+    "lastUpdated": "10/7/2026",
+    "name": "PT-1"
 }

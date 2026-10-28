@@ -172,6 +172,35 @@
     margin: 0;
 }
 
+/* Keeps card titles prominent and short descriptions easy to scan */
+#resourceResults .card-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: rgb(23, 61, 107);
+}
+
+#resourceResults .card-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: rgb(82, 106, 132);
+}
+
+/* Learn More buttons share the resource card colors */
+.resource-card-button {
+    color: rgb(23, 61, 107);
+    border-color: rgb(23, 61, 107);
+    background-color: white;
+}
+
+/* Highlights Learn More when the card is hovered or the button has keyboard focus */
+.resource-card-button:hover,
+.resource-card-button:focus-visible,
+#resourceResults .card:hover .resource-card-button {
+    color: white;
+    border-color: rgb(23, 61, 107);
+    background-color: rgb(23, 61, 107);
+}
+
 /* Stack categories into two columns on smaller screens */
 @media (max-width: 767px) {
     .category-list {
