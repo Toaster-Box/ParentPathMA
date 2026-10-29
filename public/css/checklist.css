@@ -65,6 +65,29 @@
     font-size: 0.875rem;
 }
 
+/* Contact info under each saved resource */
+.contact-toggle {
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+.saved-contact {
+    font-size: 0.875rem;
+    color: rgb(89, 89, 89);
+}
+.contact-row {
+    margin-bottom: 0.5rem;
+}
+.contact-title {
+    font-weight: 600;
+    color: rgb(25, 63, 108);
+}
+.contact-label {
+    color: rgb(89, 89, 89);
+}
+.saved-contact a {
+    overflow-wrap: anywhere;
+}
+
 /* Stack the badge under the task name on small screens */
 @media (max-width: 575.98px) {
     .task-actions {
@@ -80,6 +103,12 @@
     }
     .accordion-collapse.collapse:not(.show),
     .accordion-collapse.collapsing {
+        display: block;
+        height: auto;
+    }
+    /* Also show the contact info for every saved resource */
+    .saved-contact.collapse:not(.show),
+    .saved-contact.collapsing {
         display: block;
         height: auto;
     }
