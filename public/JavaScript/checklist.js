@@ -33,6 +33,148 @@ const defaultTasks = [
     { id: 'default12', text: 'Explore immigration and family support services', category: 'immigrant', section: 'afterBaby', done: false }
 ];
 
+// Contact details for each resource. They show in the Saved Resources box on My ParentPath
+// (and in the downloaded text file) once a resource has been saved.
+//
+// Each key is the resource's JSON file name in lower case, without ".json"
+// (for example Doulav2.JSON -> doulav2, PT-1v2.JSON -> pt-1v2).
+//
+// Every field is optional, and only the ones that are filled in are shown, in this order:
+//   phone, email, website, address, hours, note
+//   phone:   { label, value, ext, kind }   kind: 'sms' makes it a text-message link; ext is an extension
+//   email:   { label, value }
+//   website: { label, url }
+//   address: { label, value }
+//   hours:   text, or a list of { label, value }
+//   note:    text
+// A resource that is not listed here simply has no Contact info button.
+
+const resourceContacts = {
+    doulav2: {
+        phone: [
+            { label: 'MassHealth Customer Service Center', value: '(800) 841-2900' },
+            { label: 'TDD/TTY', value: '711' },
+            { label: 'My Ombudsman, for questions about your MassHealth coverage', value: '855-781-9898' },
+            { label: 'My Ombudsman videophone', value: '339-224-6831' }
+        ],
+        email: [{ label: 'My Ombudsman', value: 'atinfo@myombudsman.org' }],
+        website: [{ label: 'MassHealth Doula Services Program', url: 'https://www.mass.gov/info-details/masshealth-doula-services-program-information-for-masshealth-members' }],
+        note: 'Call the MassHealth Customer Service Center with questions about the Doula Services Program. For information about your MassHealth coverage, contact My Ombudsman.'
+    },
+    wicv2: {
+        phone: [{ label: 'MA State WIC', value: '(800) 942-1007' }],
+        email: [{ label: 'MA State WIC', value: 'wicinfo.dph@massmail.state.ma.us' }],
+        website: [
+            { label: 'WIC Nutrition Program', url: 'https://www.mass.gov/orgs/women-infants-children-nutrition-program' },
+            { label: 'Find your local WIC office by zip code', url: 'https://www.mass.gov/orgs/women-infants-children-nutrition-program/locations' }
+        ],
+        note: 'It is recommended to call or email your local WIC office. You can search for it by zip code with the local office link above.'
+    },
+    'pt-1v2': {
+        phone: [
+            { label: 'MassHealth Customer Service Center', value: '1-800-841-2900' },
+            { label: 'TTY', value: '1-800-497-4648' }
+        ],
+        website: [{ label: 'PT-1 pamphlet', url: 'https://www.mass.gov/media/7186/download' }],
+        note: "PT-1 transportation is started by a healthcare provider, not through a standard self-referral application. Contact your provider's office to ask about the referral process."
+    },
+    freshtruckv2: {
+        phone: [{ value: '617-297-7685' }],
+        email: [{ value: 'Info@freshtruck.org' }],
+        website: [{ label: 'Fresh Truck', url: 'https://www.freshtruck.org/' }]
+    },
+    sunbucksv2: {
+        phone: [{ label: 'SUN Bucks hotline', value: '855-425-8770' }],
+        website: [{ label: 'DTA Connect application overview', url: 'https://eohhs.ehs.state.ma.us/DTA/PolicyOnline/BEACON5/!SSL!/WebHelp/SUN_Bucks/SUNBucks_App.htm' }],
+        note: 'SUN Bucks is run by the Department of Transitional Assistance (DTA). You can call the hotline with questions, but the application is completed through DTA Connect.'
+    },
+    satv2: {
+        phone: [{ label: 'Solutions at Work', value: '617-576-0039', ext: '1' }],
+        email: [{ label: 'Solutions at Work', value: 'contact@solutionsatwork.org' }],
+        website: [{ label: 'Children’s Clothing Exchange', url: 'https://solutionsatwork.org/childrenclothingexchange/' }],
+        hours: 'Tuesday, Wednesday, Thursday: 10:30am – 3:30pm'
+    },
+    wbvgb: {
+        phone: [{ label: 'East Boston Social Center (EBSC)', value: '(617) 569-3221' }],
+        email: [
+            { label: 'Director of the East Boston Family Engagement Network (EBFEN)', value: 'gdevine@ebsoc.org' },
+            { label: 'EBSC', value: 'info@ebsoc.org' }
+        ],
+        website: [
+            { label: 'East Boston Family Engagement Network', url: 'https://www.ebsocialcenters.org/family-engagement-network' },
+            { label: 'Application', url: 'https://a111439.socialsolutionsportal.com/apricot-intake/fc3f2dea-a08a-4b7e-aad3-a181fb1cf984' }
+        ],
+        note: 'Welcome Baby Visits & Gift is a benefit of the East Boston Social Center’s Family Engagement Network. You can contact the Social Center directly. The Engagement Network has no listed phone number, only an email for questions (the Director). After you fill out the application, the team will contact you directly.'
+    },
+    psgv2: {
+        phone: [{ label: 'Postpartum Support International', value: '1.800.944.4773' }],
+        website: [
+            { label: 'English support groups', url: 'https://postpartum.net/get-help/psi-online-support-meetings/' },
+            { label: 'Spanish-language support groups', url: 'https://postpartum.net/en-espanol/encuentros-de-apoyo-virtuales/' }
+        ],
+        note: 'The support groups do not have their own phone number. Call Postpartum Support International.'
+    },
+    hpiv2: {
+        phone: [
+            { label: 'Postpartum Support International. Press 1 for Español or 2 for English', value: '1.800.944.4773' },
+            { label: 'Text in English', value: '800-944-4773', kind: 'sms' },
+            { label: 'Text en Español', value: '971-203-7773', kind: 'sms' }
+        ],
+        website: [{ label: 'Help for moms', url: 'https://postpartum.net/get-help/help-for-moms/' }]
+    },
+    digitaldigest: {
+        email: [{ value: 'admin@legalkeypartnership.org' }],
+        website: [{ label: 'Digital Digest – Massachusetts', url: 'https://legalkeypartnership.org/digital-digest/ma/' }]
+    },
+    childcare: {
+        phone: [
+            { label: 'Mass 211', value: '2-1-1' },
+            { label: 'Mass 211, toll-free', value: '877-211-6277' }
+        ],
+        website: [{ label: 'Mass 211 childcare help', url: 'https://mass211.org/childcare' }]
+    },
+    gblsv2: {
+        phone: [
+            { label: 'Main office', value: '617-371-1234' },
+            { label: 'Main office, toll-free', value: '800-323-3205' },
+            { label: 'Cambridge/Somerville', value: '617-603-2700' }
+        ],
+        website: [{ label: 'Greater Boston Legal Services', url: 'https://www.gbls.org/get-legal-help/our-services' }],
+        address: [
+            { label: 'Main office', value: '197 Friend Street, Boston, MA 02114' },
+            { label: 'Cambridge/Somerville', value: '60 Gore Street, Suite 203, Cambridge, MA 02141' }
+        ],
+        note: 'Intake workers speak Cantonese, English, Haitian Creole, Mandarin, Portuguese, and Spanish.'
+    },
+    moiav2: {
+        phone: [{ value: '617-635-2980' }],
+        email: [
+            { value: 'immigrantadvancement@boston.gov' },
+            { value: 'LCA@boston.gov' }
+        ],
+        website: [
+            { label: 'Mayor’s Office for Immigrant Advancement (MOIA)', url: 'https://www.boston.gov/departments/immigrant-advancement' },
+            { label: 'Contact form', url: 'https://www.boston.gov/departments/immigrant-advancement/contact-mayors-office-immigrant-advancement' }
+        ],
+        note: 'If you need translation or interpretation services, two email addresses are provided. The office also has an intake contact form on its website.'
+    },
+    raftv2: {
+        website: [{ label: 'Apply for RAFT', url: 'https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs' }]
+    },
+    heapv2: {
+        website: [
+            { label: 'Help paying your utility bill', url: 'https://www.mass.gov/info-details/help-paying-your-utility-bill' },
+            { label: 'Apply (MassHEAP)', url: 'https://www.toapply.org/MassHEAP' }
+        ]
+    },
+    firststeps: {
+        website: [{ label: 'About FIRST Steps Together', url: 'https://www.mass.gov/info-details/about-first-steps-together' }]
+    },
+    kyrv2: {
+        website: [{ label: 'Know Your Rights', url: 'https://miracoalition.org/resources/know-your-rights/' }]
+    }
+};
+
 // Saved resources list, shared by the Save Resource buttons and My ParentPath
 function getSaved() {
     try {
@@ -74,6 +216,37 @@ function safeUrl(url) {
         // Not a usable link
     }
     return '#';
+}
+
+// Contact details for a saved resource (from contacts.js), matched by the resource's JSON file name
+function getContact(item) {
+    if (typeof resourceContacts === 'undefined') {
+        return null;
+    }
+    const key = String(item.id).split('/').pop().replace(/\.json$/i, '').toLowerCase();
+    return resourceContacts[key] || null;
+}
+
+// Only the contact fields that are filled in, always in this order
+const contactTitles = [['phone', 'Phone'], ['email', 'Email'], ['website', 'Website'], ['address', 'Address'], ['hours', 'Hours'], ['note', 'Note']];
+
+function contactSections(contact) {
+    return contactTitles.map(([field, title]) => {
+        let entries = contact[field] || [];
+        if (typeof entries === 'string') {
+            entries = [{ value: entries }];
+        }
+        return { field, title, entries };
+    }).filter((section) => section.entries.length > 0);
+}
+
+// One contact entry as plain text, used in the downloaded file
+function contactEntryText(field, entry) {
+    if (field === 'website') {
+        return entry.label ? `${entry.url} (${entry.label})` : entry.url;
+    }
+    const value = field === 'phone' && entry.ext ? `${entry.value}, ext. ${entry.ext}` : entry.value;
+    return entry.label ? `${value} (${entry.label})` : value;
 }
 
 // Shows Saved or Save Resource on every button, including cards added to the page later
@@ -275,6 +448,14 @@ function startChecklist() {
             const address = url === '#' ? '' : new URL(url, document.baseURI).href;
             const link = /^https?:/i.test(address) ? ` - ${address}` : '';
             lines.push(`- ${item.name}${label}${link}`);
+            const contact = getContact(item);
+            if (contact) {
+                contactSections(contact).forEach((section) => {
+                    section.entries.forEach((entry) => {
+                        lines.push(`    ${section.title}: ${contactEntryText(section.field, entry)}`);
+                    });
+                });
+            }
         });
 
         lines.push('', 'ParentPath is not an official government website.', 'Always check program details with the official source.');
@@ -338,16 +519,53 @@ function startChecklist() {
             savedList.innerHTML = '<p class="saved-empty mb-0">No saved resources yet. Browse <a href="find-services.html">Find Services</a> and use Save Resource to bookmark them here.</p>';
             return;
         }
-        savedList.innerHTML = saved.map((item) => `
-            <div class="list-group-item d-flex justify-content-between align-items-center gap-2 px-0 py-3">
-                <a class="saved-link text-decoration-none flex-grow-1" href="${escapeHtml(safeUrl(item.url))}">
-                    <span class="d-block fw-semibold mb-1">${escapeHtml(item.name)}</span>
-                    ${categoryNames[item.category] ? `<span class="badge badge-${item.category}">${escapeHtml(categoryNames[item.category])}</span>` : ''}
-                </a>
-                <button class="btn btn-sm btn-link text-muted d-print-none" type="button" data-remove-saved="${escapeHtml(item.id)}" aria-label="Remove ${escapeHtml(item.name)} from saved resources">
-                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+        savedList.innerHTML = saved.map((item) => {
+            const contact = getContact(item);
+            const contactId = `contact-${String(item.id).replace(/[^\w-]/g, '-')}`;
+            return `
+            <div class="list-group-item px-0 py-3">
+                <div class="d-flex justify-content-between align-items-center gap-2">
+                    <a class="saved-link text-decoration-none flex-grow-1" href="${escapeHtml(safeUrl(item.url))}">
+                        <span class="d-block fw-semibold mb-1">${escapeHtml(item.name)}</span>
+                        ${categoryNames[item.category] ? `<span class="badge badge-${item.category}">${escapeHtml(categoryNames[item.category])}</span>` : ''}
+                    </a>
+                    <button class="btn btn-sm btn-link text-muted d-print-none" type="button" data-remove-saved="${escapeHtml(item.id)}" aria-label="Remove ${escapeHtml(item.name)} from saved resources">
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
+                    </button>
+                </div>
+                ${contact ? `
+                <button class="btn btn-link btn-sm p-0 mt-2 contact-toggle d-print-none" type="button" data-bs-toggle="collapse" data-bs-target="#${contactId}" aria-expanded="false" aria-controls="${contactId}">
+                    <i class="bi bi-telephone" aria-hidden="true"></i> Contact info
                 </button>
-            </div>`).join('');
+                <div class="collapse saved-contact mt-2" id="${contactId}">${contactHtml(contact)}</div>` : ''}
+            </div>`;
+        }).join('');
+    }
+
+    // Contact details for one saved resource: Phone, Email, Website, Address, Hours, Note (only the ones filled in)
+    function contactHtml(contact) {
+        return contactSections(contact).map(({ field, title, entries }) => {
+            if (field === 'note') {
+                return `<div class="contact-row"><div class="contact-title">${title}</div><p class="contact-note mb-0">${escapeHtml(entries[0].value)}</p></div>`;
+            }
+            const items = entries.map((entry) => {
+                const label = entry.label && field !== 'website' ? ` <span class="contact-label">(${escapeHtml(entry.label)})</span>` : '';
+                let value;
+                if (field === 'phone') {
+                    const digits = entry.value.replace(/\D/g, '') + (entry.ext ? `,${entry.ext}` : '');
+                    const shown = entry.ext ? `${entry.value}, ext. ${entry.ext}` : entry.value;
+                    value = `<a href="${entry.kind === 'sms' ? 'sms' : 'tel'}:${escapeHtml(digits)}">${escapeHtml(shown)}</a>`;
+                } else if (field === 'email') {
+                    value = `<a href="mailto:${escapeHtml(entry.value)}">${escapeHtml(entry.value)}</a>`;
+                } else if (field === 'website') {
+                    value = `<a href="${escapeHtml(safeUrl(entry.url))}" target="_blank" rel="noopener">${escapeHtml(entry.label || entry.url)}</a>`;
+                } else {
+                    value = escapeHtml(entry.value);
+                }
+                return `<li>${value}${label}</li>`;
+            }).join('');
+            return `<div class="contact-row"><div class="contact-title">${title}</div><ul class="list-unstyled mb-0">${items}</ul></div>`;
+        }).join('');
     }
 
     savedList.addEventListener('click', (event) => {
