@@ -2,14 +2,23 @@
 	"category":"Immigrant & Language Services",
 	"org":"Massachusetts Immigration & Refugee Advocacy (MIRA) Coalition",
 	"description":"",
-	"whatThisIs":"[Resources and Information aimed at ensuring immigrants know their rights. They provide Family Preparedness Packets, Legal Service Directory, Immigration Scams and Notorious Fraud Information, and other similar information focused resources.]",
-	"link":"[https://miracoalition.org/resources/know-your-rights/]",
+	"whatThisIs":"Resources and information aimed at ensuring immigrants know their rights. These include Family Preparedness Packets, a Legal Service Directory, information about immigration scams and notorious fraud, and other similar informational resources.",
+	"link":"https://miracoalition.org/resources/know-your-rights/",
 	"relatedLink":["https://miracoalition.org/resources/know-your-rights/back-to-school-resources/"],
-	"relatedLinkExplanation":["Back to School information"],
+	"relatedLinkExplanation":[
+		"Back-to-school information"
+	],
 	"application":"",
-	"whoItHelps":["People looking to know their rights and suggested steps when dealing with Law enforcement regardless of immigration status”,”People looking for Immigration Legal Services”,”People looking for information on Family preparedness for ICE interactions"],
+	"whoItHelps":[
+		"People looking to know their rights and suggested steps when dealing with law enforcement, regardless of immigration status.",
+		"People looking for immigration legal services.",
+		"People looking for information on family preparedness for ICE interactions."
+	],
 	"whatItHelps":"",
-	"whatToKnow":["Most Information resources are available translated”,”To switch the language of the website itself, the drop down it located top right"],
+	"whatToKnow":[
+		"Most informational resources are available in translation.",
+		"To change the website's language, use the dropdown at the top right."
+	],
 	"lastUpdated":"10/19/2026",
 	"name":"Know Your Rights"
 }

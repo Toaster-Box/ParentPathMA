@@ -1,15 +1,23 @@
 {
-	"category":"Benefits & Financial Assitance",
+	"category":"Benefits & Financial Assistance",
 	"org":"Non-profit Organization",
-	"description":"Children Item Exchange",
-	"whatThisIs":"[The Children Item exchange is located in Mid Cambridge, a place to trade and receive new clothes and items for growing children. Upon signing up you will receive 10 credits that can be used on children's clothing or eligible items. You may also volunteer to earn more credits. Solutions at work stock items aiming for children one to sixteen.] ",
-	"link":"[https://solutionsatwork.org/childrenclothingexchange/]",
+	"description":"Children's item exchange.",
+	"whatThisIs":"The Children's Item Exchange is located in Mid-Cambridge and provides a place to trade and receive new clothes and items for growing children. Upon signing up, you will receive 10 credits that can be used on children's clothing or eligible items. You may also volunteer to earn more credits. solutions at work stocks items for children ages one to sixteen.",
+	"link":"https://solutionsatwork.org/childrenclothingexchange/",
 	"relatedLink": ["https://solutionsatwork.org/wp-content/uploads/2024/11/ItemExchange111124.pdf"],
-	"relatedLinkExplanation":["PDF for more information & Qualifying Items"],
+	"relatedLinkExplanation":[
+		"PDF for more information and qualifying items"
+	],
 	"application":"",
-	"whoItHelps":["Families looking to trade out clothing that has been out grown","Individual’s looking for a free alternative to provide age appropriate gear"] ,
+	"whoItHelps":[
+		"Families looking to trade clothing their children have outgrown.",
+		"Individuals looking for a free alternative to provide age-appropriate gear."
+	] ,
 	"whatItHelps":"",
-	"whatToKnow": ["Located at 1151 Massachusetts Ave, Cambridge, MA 02138.","Their application process will request: Contact information for the Intake form, Your child’s birth certificate or health insurance card to prove that the child is yours OR If pregnant, a letter from your doctor stating that you are pregnant, and some basic demographic information such as your gender and the age of your child"],
+	"whatToKnow": [
+		"Located at 1151 Massachusetts Ave, Cambridge, MA 02138.",
+		"The application process requests contact information for the intake form; your child's birth certificate or health insurance card to prove that the child is yours OR, if pregnant, a letter from your doctor stating that you are pregnant; and basic demographic information, such as your gender and the age of your child."
+	],
 	"lastUpdated":"10/19/2026",
-	"name":"solutions at work"
+	"name":"solutions at work — Children's Clothing Exchange"
 }

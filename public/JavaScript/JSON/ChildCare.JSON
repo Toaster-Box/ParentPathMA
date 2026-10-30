@@ -1,15 +1,24 @@
 {
 	"category":"Childcare & Education",
 	"org":"Department of Early Education and Care / Mass211",
-	"description":"Financial Assistance for Childcare",
-	"whatThisIs":"[Massachusetts by way of EEC offers financial assistance to help families pay for childcare. Due to budget constraints however once you apply you will be added to a waitlist. If you require application help or to ask questions not covered by the EEC, Mass211 can help screen families for eligibility and locate childcare providers near you. The Application for Child Care Financial Assistance itself is run through EEC and can be completed online once an account with them is made. If accepted you can then find a childcare provider who will accept the voucher, and pay for childcare at a much lower cost if at all.]",
-	"link":"[https://www.mass.gov/child-care-financial-assistance]",
+	"description":"Financial assistance for childcare.",
+	"whatThisIs":"Massachusetts, through EEC, offers financial assistance to help families pay for childcare. However, due to budget constraints, you will be added to a waitlist once you apply. If you need help applying or have questions not covered by EEC, Mass211 can help screen families for eligibility and locate childcare providers near you. The Application for Child Care Financial Assistance is run through EEC and can be completed online once you create an account. If accepted, you can then find a childcare provider who accepts the voucher and pay for childcare at a much lower cost, if at all.",
+	"link":"https://www.mass.gov/child-care-financial-assistance",
 	"relatedLink":["https://mass211.org/childcare","https://childcare.mass.gov/families/frequently-asked-questions#benefit-eligibility","https://www.mass.gov/how-to/apply-for-funds-to-help-pay-for-child-care"],
-	"relatedLinkExplanation":["Mass211","EEC FAQ","Learn more about Eligibility"],
-	"application":"[https://childcare.mass.gov/families/login]",
-	"whoItHelps":"[Families and Parents looking for financial help with childcare]",
+	"relatedLinkExplanation":[
+		"Mass211",
+		"EEC FAQ",
+		"Learn more about eligibility"
+	],
+	"application":"https://childcare.mass.gov/families/login",
+	"whoItHelps":[
+		"Families and parents looking for financial help with childcare."
+	],
 	"whatItHelps":"",
-	"whatToKnow":["Due to waitlists, aid is not guaranteed on a set timeline, there is currently no released document sharing average waiting times.","Parent DO NOT have to offer proof of citizenship to apply, only the child must show documentation of citizenship or be a qualified non-citizens"],
+	"whatToKnow":[
+		"Due to waitlists, aid is not guaranteed on a set timeline. There is currently no released document sharing average waiting times.",
+		"Parents do not have to provide proof of citizenship to apply. Only the child must show documentation of citizenship or be a qualified non-citizen."
+	],
 	"lastUpdated":"10/19/2026",
-	"name":"Info Panel - Child Care Financial Assistance"
+	"name":"Child Care Financial Assistance"
 }

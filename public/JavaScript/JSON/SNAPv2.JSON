@@ -1,15 +1,28 @@
 {
-	"category":"Benefit / Service",
-	"org":"U.S. Food and Nutrition Administration:  Department of Transitional Services",
-	"description":"Food Assistance",
-	"whatThisIs":"SNAP (Supplemental Nutrition Assistance Program) Formally known as EBT or Food Stamps  is a Federal program that aims to help individuals and families help pay for food. Physical card similar to a debit or credit card are given to spend on food in approved grocery, pharmacy, and farmer markets.",
-	"link":"https://www.mass.gov/how-to/supplemental-nutrition-assistance-program-snap-formerly-known-as-food-stamps",
-	"relatedLink":["https://dtafinder.dtadash.ehs.mass.gov/", "https://dtaconnect.eohhs.mass.gov/screening"],
-	"relatedLinkExplanation":["HIP - Spend your SNAP/EBT money at select farmers Markets.", "Eligibility Checker"],
-	"application":"https://dtaconnect.eohhs.mass.gov/apply",
-	"whoItHelps":"Anyone who is currently struggling to find food in the budget.",
-	"whatItHelps":"",
-	"whatToKnow":"There are income, household, and expenses eligibility requirements, HIP (Healthy Incentives Program ) is a supplementary program that allows you to spend your SNAP/EBT money at select farmers Markets., You can apply for SNAP even if you already have WIC. Pairing the two can help maximize the range of your budget",
-	"lastUpdated":"10/7/2026",
-	"name":"SNAP (Supplemental Nutrition Assistance Program)"
+    "category": "Benefit / Service",
+    "org": "U.S. Food and Nutrition Administration:  Department of Transitional Services",
+    "description": "Food assistance.",
+    "whatThisIs": "SNAP (Supplemental Nutrition Assistance Program), formerly known as EBT or food stamps, is a federal program that aims to help individuals and families pay for food. Physical cards, similar to debit or credit cards, are provided for purchasing food at approved grocery stores, pharmacies, and farmers' markets.",
+    "link": "https://www.mass.gov/how-to/supplemental-nutrition-assistance-program-snap-formerly-known-as-food-stamps",
+    "relatedLink": [
+        "https://dtafinder.dtadash.ehs.mass.gov/",
+        "https://dtaconnect.eohhs.mass.gov/screening"
+    ],
+    "relatedLinkExplanation": [
+        "HIP: Spend your SNAP/EBT money at select farmers' markets.",
+        "Eligibility checker"
+    ],
+    "application": "https://dtaconnect.eohhs.mass.gov/apply",
+    "whoItHelps": [
+        "Massachusetts individuals and families with limited income who need assistance purchasing groceries.",
+        "Households that may qualify based on their income, household size, and certain expenses."
+    ],
+    "whatItHelps": "",
+    "whatToKnow": [
+        "There are income, household, and expense eligibility requirements.",
+        "HIP (Healthy Incentives Program) is a supplementary program that allows you to spend your SNAP/EBT money at select farmers' markets.",
+        "You can apply for SNAP even if you already have WIC. Pairing the two can help maximize your budget."
+    ],
+    "lastUpdated": "10/7/2026",
+    "name": "SNAP (Supplemental Nutrition Assistance Program)"
 }

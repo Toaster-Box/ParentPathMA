@@ -1,0 +1,4 @@
+{
+    // Sets the root directory for the live server so VScode knows where to load files from, which is useful for launching live server locally
+    "liveServer.settings.root": "/public"
+}

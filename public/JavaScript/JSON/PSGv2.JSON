@@ -2,14 +2,22 @@
 	"category":"Healthcare & Health Insurance",
 	"org":"Postpartum Support International",
 	"description":"",
-	"whatThisIs":"[Facilitated support group for individuals dealing with pregnancy loss, infant loss, fertility challenges, and parenting after loss. They are free 90 minute sessions, offered over Zoom and facilitated by trained peer supporters offering confidentiality to participants.]",
-	"link":"[https://postpartum.net/get-help/psi-online-support-meetings/]",
+	"whatThisIs":"Facilitated support groups for individuals dealing with pregnancy loss, infant loss, fertility challenges, and parenting after loss. These free 90-minute sessions are offered over Zoom and facilitated by trained peer supporters who offer confidentiality to participants.",
+	"link":"https://postpartum.net/get-help/psi-online-support-meetings/",
 	"relatedLink":["https://sharewellnow.com/psi-support-groups"],
 	"relatedLinkExplanation":["ShareWell Page for Zoom Registration"] ,
 	"application":"",
-	"whoItHelps":["Individuals struggling with the above topics looking for online support groups","All support groups are offered for free and accessible to anyone with a device that can run zoom with camera functionality"] ,
+	"whoItHelps":[
+		"Individuals struggling with the above topics who are looking for online support groups.",
+		"All support groups are free and accessible to anyone with a device that can run Zoom with camera functionality."
+	] ,
 	"whatItHelps":"",
-	"whatToKnow":["Each Support group has a limited number participants and is admitted on a first-come, first-served basis”,”There are currently 55 available support groups all with different topics and goals”,” For the safety of all group members cameras are required during introductions”,”For Confidentiality student and or Clinical observations are not allowed in group spaces"],
+	"whatToKnow":[
+		"Each support group has a limited number of participants, who are admitted on a first-come, first-served basis.",
+		"There are currently 55 available support groups, all with different topics and goals.",
+		"For the safety of all group members, cameras are required during introductions.",
+		"For confidentiality, student and/or clinical observations are not allowed in group spaces."
+	],
 	"lastUpdated":"10/19/2026",
 	"name":"Peer Support Groups"
 }

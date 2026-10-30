@@ -33,6 +33,7 @@
         <link href="/css/main_styles.css" rel="stylesheet" type="text/css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
         <link href="/css/find-services.css" rel="stylesheet" type="text/css">
+        <link href="/css/resources.css" rel="stylesheet" type="text/css">
         <meta name="description" content="Browse the ParentPath Find Services page for Massachusetts family resources.">
         <title>Find Services | ParentPath</title>
     </head>
@@ -77,24 +78,22 @@
     <main class="find-services-page" id="body">
         <header class="page-intro">
             <h1>Find Services</h1>
-            <p><!--Search by keyword or -->Browse by category to find the information you need.</p>
+            <p>Search by keyword or browse by category to find the information you need.</p>
         </header>
 
         <!-- Search -->
-        <!-- Temp until search feature is actually in
-        <section class="search-section">
+        <form class="search-section" id="resourceSearchForm" role="search">
             <label for="resourceSearch">Search for a service</label>
             <div class="search-box">
                 <input class="search-input" type="search" id="resourceSearch" placeholder="Search services (e.g. MassHealth, WIC, etc.)">
-                <button class="search-button" type="button" aria-label="Search resources">
+                <button class="search-button" type="submit" aria-label="Search resources">
                     <i class="bi bi-search" aria-hidden="true"></i>
                 </button>
             </div>
-        </section>
-        -->
+        </form>
 
         <!-- Categories -->
-        <!-- data-category identifies each button's category for filtering -->
+        <!-- data-category matches the category value in homepage links -->
         <section class="categories-section">
             <h2>Browse by Category</h2>
             <div class="category-list">
@@ -129,20 +128,28 @@
         <!-- Resource Section -->
         <section class="results-section">
             <h2>Explore Resources</h2>
-            <!-- Resource cards will be added here when filtering is connected. -->
+            <!-- Search moves matching cards here, then returns them when browsing by category -->
             <div class="results-box container" id="resourceResults">
                 <div class="row">
                     <div class="empty-state col" id="EmptyCardBox">
                         <i class="bi bi-search empty-icon" aria-hidden="true"></i>
                         <h3>Ready to find a resource?</h3>
-                        <p>Select a category above <!-- or use the search bar --> to get started.</p>
+                        <p>Select a category above or use the search bar to get started.</p>
                 </div>
                 </div>
+
+                <div class="row d-none" id="searchFeedback" role="status" aria-live="polite">
+                    <div class="empty-state col">
+                        <h3 id="searchFeedbackTitle"></h3>
+                        <p id="searchFeedbackText"></p>
+                    </div>
+                </div>
+                <div class="row d-none" id="searchResultsRow"></div>
 
                 <!-- Copy this card template, change it if the cards need changing, wanted to automate this, didnt have the time
                     <div class="col-12 col-md-6 col-lg-4 p-2">
                         <div class="card h-100" >
-					  	    <div class="card-body">
+					  	    <div class="card-body d-flex flex-column">
 							    <h5 class="card-title">[SERVICE NAME]</h5>
 							    <p class="card-text"></p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/[FILE].JSON')"></a>
@@ -153,345 +160,313 @@
                 -->
                 
                 <!-- Section for the health cards --> 
-                <!-- While I would love to automatically generate content for these with a bit of JS, dont have the time to figure that out right now -->
-                <!-- Resource cards use a new 1 | 2 | 3 column layout. The unused 3rd column space ideally fills as more cards are added -->
+                <!-- Each card pairs a short description with its permanent JSON path for search and details -->
                 <div class="row" id="HealthCareCardSection">
-                    <div class="col-12 col-md-6 col-lg-4 p-2">
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/Doulav2.JSON">
                         <div class="card h-100">
-					  	    <div class="card-body">
+					  	    <div class="card-body d-flex flex-column">
 							    <h5 class="card-title">Doula Health Services</h5>
-							    <p class="card-text">Doula Services offered under MassHealth Insurance</p>
+							    <p class="card-text">Emotional, physical, and informational support during pregnancy and after delivery.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/Doulav2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
 					  	    </div>
 					    </div>
 				    </div>
-                    <div class="col-12 col-md-6 col-lg-4 p-2">
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/PT-1v2.JSON">
                         <div class="card h-100">
-					  	    <div class="card-body">
+					  	    <div class="card-body d-flex flex-column">
 							    <h5 class="card-title">MassHealth Transportation</h5>
-							    <p class="card-text"></p>
+							    <p class="card-text">Non-emergency transportation to medical appointments for eligible MassHealth members.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/PT-1v2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
 					  	    </div>
 					    </div>
 				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Digital Digest - Massachusetts</h5>
-							    <p class="card-text"></p>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/DigitalDigest.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Digital Digest - Massachusetts</h5>
+                                <p class="card-text">Information on changes to Massachusetts laws, policies, and public services.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/DigitalDigest.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">FIRST Steps Together</h5>
-							    <p class="card-text">Home visiting program meant to support parents on their recovery journey</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/FIRSTSteps.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">FIRST Steps Together</h5>
+                                <p class="card-text">Recovery support and home visits for pregnant individuals and parents.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/FIRSTSteps.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Help for Perinatal Individuals</h5>
-							    <p class="card-text">Perinatal Mental Health Assistance</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/HPIv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Help for Perinatal Individuals</h5>
+                                <p class="card-text">Mental health support, peer mentoring, and resources for new and expecting parents.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/HPIv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Postpartum Support International</h5>
-							    <p class="card-text">Peer Support Groups</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/PSGv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Peer Support Groups</h5>
+                                <p class="card-text">Free online support groups for pregnancy, parenting, and related emotional challenges.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/PSGv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="row" id="BenefitsCardSection"> <!-- Section for the benifits cards --> 
-                    <div class="col-12 col-md-6 col-lg-4 p-2">
+                <div class="row" id="BenefitsCardSection"> <!-- Section for the benifits cards -->
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/WICv2.JSON">
                         <div class="card h-100" >
-					  	    <div class="card-body">
+					  	    <div class="card-body d-flex flex-column">
 							    <h5 class="card-title">WIC Nutrition Program</h5>
-							    <p class="card-text"></p>
+							    <p class="card-text">Healthy foods, nutrition education, and breastfeeding support for eligible families.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/WICv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
 					  	    </div>
 					    </div>
 				    </div>
-                    <div class="col-12 col-md-6 col-lg-4 p-2">
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/SNAPv2.JSON">
                         <div class="card h-100" >
-					  	    <div class="card-body">
+					  	    <div class="card-body d-flex flex-column">
 							    <h5 class="card-title">SNAP MA Services</h5>
-							    <p class="card-text"></p>
-                                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/SNAPv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
+							    <p class="card-text">Food assistance to help eligible individuals and families afford groceries.</p>
+                                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/SNAPv2.JSON')"></a>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
 					  	    </div>
 					    </div>
 				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Fresh Truck</h5>
-							    <p class="card-text">Low Cost Produce Markets</p>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/FreshTruckv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Fresh Truck</h5>
+                                <p class="card-text">Affordable fresh produce through community markets throughout Boston.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/FreshTruckv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Massachusetts Home Energy Assistance Program (HEAP)</h5>
-							    <p class="card-text">Utility Assistance</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/HEAPv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Massachusetts Home Energy Assistance Program (HEAP)</h5>
+                                <p class="card-text">Financial assistance to help eligible households pay heating bills.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/HEAPv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Residential Assistance for Families in Transition(RAFT)</h5>
-							    <p class="card-text">Emergency funding to help avoid  “eviction, foreclosure, loss of utilities, and other housing emergencies.”</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/RAFTv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Residential Assistance for Families in Transition (RAFT)</h5>
+                                <p class="card-text">Emergency financial assistance for eligible households facing housing instability.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/RAFTv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Children Item Exchange</h5>
-							    <p class="card-text">A place to trade and receive new clothes and items for growing children</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/SATv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">solutions at work — Children's Clothing Exchange</h5>
+                                <p class="card-text">Children's clothing and essential items through a community exchange program.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/SATv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">SUN Bucks</h5>
-							    <p class="card-text">Food Assitence for famlies with school-age Children</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/SUNBucksv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">SUN Bucks</h5>
+                                <p class="card-text">Food assistance for eligible families with school-aged children during summer.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/SUNBucksv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Welcome Baby Visits</h5>
-							    <p class="card-text">East Boston Family Engagement Network offers Baby visits to newborns</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/WBVGB.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Welcome Baby Visits &amp; Gift Basket</h5>
+                                <p class="card-text">Home visits, baby essentials, and family resources for parents of newborns.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/WBVGB.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="row" id="ParentLeaveCardSection"> <!-- Section for the Parent Leave cards -->
-                    <div class="col-12 col-md-6 col-lg-4 p-2">
-                        <div class="card h-100" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">[SERVICE NAME]</h5>
-							    <p class="card-text"></p>
-                                <!--<a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/[FILE].JSON')"></a>-->
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
+
                 </div>
                 
-                <div class="row" id="ChildcareCardSection"> <!-- Section for the childcare cards --> 
-                    <div class="col-12 col-md-6 col-lg-4 p-2">
-                        <div class="card h-100" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Department of Early Education and Care</h5>
-							    <p class="card-text">Financial Assistance for Childcare</p>
-                                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/ChildCare.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
+                <div class="row" id="ChildcareCardSection"> <!-- Section for the childcare cards -->
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/ChildCare.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Child Care Financial Assistance</h5>
+                                <p class="card-text">Financial assistance to help eligible Massachusetts families afford childcare.</p>
+                                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/ChildCare.JSON')"></a>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="row" id="ImmigrantCardSectoion"> <!-- Section for the immigrant support cards --> 
-                    <div class="col-12 col-md-6 col-lg-4 p-2">
+                <div class="row" id="ImmigrantCardSectoion"> <!-- Section for the immigrant support cards -->
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/ESOLv2.JSON">
                         <div class="card h-100" >
-					  	    <div class="card-body">
+					  	    <div class="card-body d-flex flex-column">
 							    <h5 class="card-title">English for Speakers of Other Languages (ESOL)</h5>
-							    <p class="card-text"></p>
-                                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/ESOLv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
+							    <p class="card-text">Free English classes to help Massachusetts residents improve their language skills.</p>
+                                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/ESOLv2.JSON')"></a>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
 					  	    </div>
 					    </div>
 				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Know Your Rights</h5>
-							    <p class="card-text">Resources and Information aimed at ensuring immigrants know their rights.</p>
-                                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/KYRv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Greater Boston Legal Services</h5>
-							    <p class="card-text">Free Civil Legal Help</p>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/GBLSv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Free Civil Legal Help</h5>
+                                <p class="card-text">Free legal assistance for eligible low-income individuals and families in Greater Boston.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/GBLSv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-xl">
-                        <div class="card mb-3" >
-					  	    <div class="card-body">
-							    <h5 class="card-title">Immigrant Advancement</h5>
-							    <p class="card-text">relays resources and information to the immigrant community in Boston</p>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/MOIAv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Immigrant Advancement</h5>
+                                <p class="card-text">Information, referrals, and community support for immigrants living in Boston.</p>
                                 <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/MOIAv2.JSON')"></a>
-                                <button class="btn btn-secondary">Learn More</button>
-					  	    </div>
-					    </div>
-				    </div>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-2" data-resource-file="/JavaScript/JSON/KYRv2.JSON">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Know Your Rights</h5>
+                                <p class="card-text">Information about immigrant rights, legal resources, and family preparedness.</p>
+                                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#ResourceModal" onclick="loadJSON('/JavaScript/JSON/KYRv2.JSON')"></a>
+                                <button class="btn btn-outline-primary resource-card-button mt-auto align-self-start">Learn More <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
     
-    <!-- Resource modal section, I wish there was a better way to do this but you cant load JS based off of links and this is a static site -->
-    <section class="modal fade" id="ResourceModal" tabindex="-1">
-		<div class="modal-dialog modal-xl modal-fullscreen-md-down">
-            <div class="row modal-content">
-                
-                <div class="modal-header">
-                    <ul>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back to Find Services</button>
-                        <small>[<small id="ResourceCategory"></small>]</small>
-				        <h1 id="ResouceName"></h1>
-                        <small id="ResourceDesc"></small>
-                    </ul>
+    <!-- All cards share this modal; resources.js fills it with the selected JSON data -->
+    <section class="modal fade" id="ResourceModal" tabindex="-1" aria-labelledby="ResouceName">
+        <div class="modal-dialog modal-xl modal-fullscreen-md-down">
+            <div class="modal-content resource-detail">
+                <div class="modal-header resource-controls d-flex flex-wrap justify-content-between gap-3">
+                    <button type="button" class="resource-back btn btn-link" data-bs-dismiss="modal">
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i> Back to Find Services
+                    </button>
+                    <button type="button" class="btn btn-outline-primary save-resource-button" aria-pressed="false" data-id="" data-name="" data-category="" data-url="">
+                        <i class="bi bi-bookmark" aria-hidden="true"></i> <span>Save Resource</span>
+                    </button>
                 </div>
-            <div class="modal-body container-fluid">
-			<div class="col">
-				<div class="card mb-3">
-					<div class="row g-0">
-						<div class="col-md-1">
-					  		<img src="#" class="img-fluid rounded-start" alt="...">
-						</div>
-						<div class="col-md-8">
-					  		<div class="card-body">
-								<h5 class="card-title">What is this program?</h5>
-								<p class="card-text" id="ProgramDesc"></p>
-					  		</div>
-						</div>
-				  	</div>
-				</div>
-				<div class="card mb-3">
-					<div class="row g-0">
-						<div class="col-md-1">
-							<img src="#" class="img-fluid rounded-start" alt="...">
-						</div>
-						<div class="col-md-8">
-							<div class="card-body">
-								<h5 class="card-title">Who does this help?</h5>
-								<p class="card-text" id="UseCase"></p>
-							</div>
-						</div>
-					</div>
-				</div>  
-				<div class="card mb-3">
-					<div class="row g-0">
-						<div class="col-md-1">
-							<img src="#" class="img-fluid rounded-start" alt="...">
-						</div>
-						<div class="col-md-8">
-							<div class="card-body">
-								<h5 class="card-title">What should I know?</h5>
-								<p class="card-text" id="ResourceImportInfo"></p>
-							</div>
-						</div>
-					</div>
-				</div> 
-			</div> 
-			
-			<div class="col">
-				<div class="card mb-3">
-					<h3 class="card-icon">
-						<h5 class="card-title">Next Steps</h5>
-					</h3>
-					<div class="card-body">
-						<h5 class="card-title"></h5>
-						<p class="card-text small">For detailed eligbility requirements, application information, and the most up-to-date details, please vist the offical website</p>
-						<a class="btn btn-primary" id="ResourceLink" href="#">Visit Offical Website</a>
-                    <div class="mt-2">
-                        <button type="button" class="btn btn-outline-primary save-resource-button" aria-pressed="false" data-id="" data-name="" data-category="" data-url="">
-                         <i class="bi bi-bookmark"></i> <span>Save Resource</span>
-                        </button>
-
-					</div>
-				</div>
+                <div class="modal-body">
+                    <header class="resource-heading mb-4">
+                        <span class="resource-category" id="ResourceCategory"></span>
+                        <h1 id="ResouceName"></h1>
+                        <p class="resource-summary mb-0" id="ResourceDesc"></p>
+                    </header>
+                    <div class="row g-4">
+                        <!-- Main resource information -->
+                        <div class="col-12 col-lg-8">
+                            <section class="resource-panel d-flex gap-3 mb-4">
+                                <span class="resource-icon flex-shrink-0" aria-hidden="true"><i class="bi bi-clipboard"></i></span>
+                                <div class="resource-panel-content">
+                                    <h2>What is this program?</h2>
+                                    <div id="ProgramDesc"></div>
+                                </div>
+                            </section>
+                            <section class="resource-panel d-flex gap-3 mb-4">
+                                <span class="resource-icon flex-shrink-0" aria-hidden="true"><i class="bi bi-people"></i></span>
+                                <div class="resource-panel-content">
+                                    <h2>Who may find this useful?</h2>
+                                    <div id="UseCase"></div>
+                                </div>
+                            </section>
+                            <section class="resource-panel d-flex gap-3">
+                                <span class="resource-icon flex-shrink-0" aria-hidden="true"><i class="bi bi-list-check"></i></span>
+                                <div class="resource-panel-content">
+                                    <h2>Keep in Mind</h2>
+                                    <div id="ResourceImportInfo"></div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- Supporting details and official next steps -->
+                        <aside class="col-12 col-lg-4">
+                            <section class="resource-panel mb-3" id="ResourceDetails">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <span class="resource-icon flex-shrink-0" aria-hidden="true">
+                                        <i class="bi bi-building"></i>
+                                    </span>
+                                    <h2 class="mb-0">Program Details</h2>
+                                </div>
+                                <dl class="resource-metadata mb-0">
+                                    <dt>Agency</dt>
+                                    <dd class="mb-0" id="ResourceOrg"></dd>
+                                </dl>
+                            </section>
+                            <section class="resource-panel mb-3">
+                                <div class="d-flex gap-3">
+                                    <span class="resource-icon flex-shrink-0" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                                    <div class="resource-panel-content">
+                                        <h2>Next Steps</h2>
+                                        <p>For detailed eligibility requirements, application information, and the most up-to-date details, please visit the official website.</p>
+                                        <a class="btn btn-primary resource-official" id="ResourceLink" href="#">Visit Official Website <i class="bi bi-box-arrow-up-right ms-1" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="resource-panel mb-3" id="ResourceRelatedSection">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <span class="resource-icon flex-shrink-0" aria-hidden="true"><i class="bi bi-link-45deg"></i></span>
+                                    <h2 class="mb-0">Related Resources</h2>
+                                </div>
+                                <ul class="resource-related list-unstyled mb-0">
+                                    <li style="display: none;">
+                                        <a id="ResourceRelatedLink1"><span id="ResourceRelatedExplanation1"></span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li style="display: none;">
+                                        <a id="ResourceRelatedLink2"><span id="ResourceRelatedExplanation2"></span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li style="display: none;">
+                                        <a id="ResourceRelatedLink3"><span id="ResourceRelatedExplanation3"></span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li style="display: none;">
+                                        <a id="ResourceRelatedLink4"><span id="ResourceRelatedExplanation4"></span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li style="display: none;">
+                                        <a id="ResourceRelatedLink5"><span id="ResourceRelatedExplanation5"></span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <p class="resource-updated mb-0" id="ResourceUpdatedSection">Last checked: <span id="ResourceLastUpdated"></span></p>
+                        </aside>
+                    </div>
+                </div>
             </div>
-				<div class="card mb-3">
-					<h3 class="card-icon">
-
-					</h3>
-					<div class="card-body">
-						<h5 class="card-title">Related Resource Links</h5>
-						<div class="card-text">
-							<ul>
-								<li style="display: none;" class="py-2">
-									<a class="btn btn-primary" id="ResourceRelatedLink1">Go To</a>
-									<div id="ResourceRelatedExplanation1"></div>
-								</li>
-								<li style="display: none;" class="py-2">
-									<a class="btn btn-primary" id="ResourceRelatedLink2">Go To</a>
-									<div id="ResourceRelatedExplanation2"></div>
-								</li>
-								<li style="display: none;" class="py-2">
-									<a class="btn btn-primary" id="ResourceRelatedLink3">Go To</a>
-									<div id="ResourceRelatedExplanation3"></div>
-								</li>
-								<li style="display: none;" class="py-2">
-									<a class="btn btn-primary" id="ResourceRelatedLink4">Go To</a>
-									<div id="ResourceRelatedExplanation4"></div>
-								</li>
-								<li style="display: none;" class="py-2">
-									<a class="btn btn-primary" id="ResourceRelatedLink5">Go To</a>
-									<div id="ResourceRelatedExplanation5"></div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="card mb-3">
-					<h3 class="card-icon">
-
-					</h3>
-					<div class="card-body">
-						<p>This resource was last checked on:</p>
-						<p id="ResourceLastUpdated"></p>
-					</div>
-				</div>
-			</div>
-            </div>
-            </div>
-		</div>
-	</section>
+        </div>
+    </section>
 
     <!-- footer, shared across all pages, responsive -->
     <footer class="containter-fluid">

@@ -2,14 +2,24 @@
 	"category":"Healthcare & Health Insurance",
 	"org":"Massachusetts Department of Public Health (DPH)",
 	"description":"",
-	"whatThisIs":"[Home visiting program meant to support parents on their recovery journey. They offer home visits, access to licensed mental health counselors who work with both addiction and parenting, connections to other parents going through the same journey, and more. First steps is a confidential and free program that offers support in person and online.]",
-	"link":"[https://www.mass.gov/info-details/about-first-steps-together]",
-	"relatedLink":"[https://cdn.craft.cloud/d6189932-7a21-4085-aeba-890d32a61d1a/assets/images/FIRST-Steps-Together-Map-4.23.pdf]",
-	"relatedLinkExplanation":"[Service Map & Locations]",
-	"application":"[You can apply in-person at one of their Office Locations] ",
-	"whoItHelps":"[“Parents going through recovery, Opioid/Marijuan/Alcohol or other substances”,”If you are currently pregnant or are a parent of a child including and/or under 5.”]",
+	"whatThisIs":"A home visiting program meant to support parents on their recovery journey. It offers home visits, access to licensed mental health counselors who work with both addiction and parenting, connections to other parents going through the same journey, and more. FIRST Steps Together is a confidential and free program that offers support in person and online.",
+	"link":"https://www.mass.gov/info-details/about-first-steps-together",
+	"relatedLink":[
+		"https://cdn.craft.cloud/d6189932-7a21-4085-aeba-890d32a61d1a/assets/images/FIRST-Steps-Together-Map-4.23.pdf"
+	],
+	"relatedLinkExplanation":[
+		"Service Map & Locations"
+	],
+	"application":"You can apply in-person at one of their Office Locations",
+	"whoItHelps":[
+		"Parents going through recovery involving opioids, marijuana, alcohol, or other substances.",
+		"If you are currently pregnant or are a parent of a child including and/or under 5."
+	],
 	"whatItHelps":"",
-	"whatToKnow":"[“You need to be at least 18 years old”,” In order to apply you must go to one of 8 office locations in Massachusetts”]",
+	"whatToKnow":[
+		"You need to be at least 18 years old.",
+		"In order to apply, you must go to one of 8 office locations in Massachusetts."
+	],
 	"lastUpdated":"10/19/2026",
 	"name":"FIRST Steps Together"
 }
