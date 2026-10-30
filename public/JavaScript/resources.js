@@ -70,12 +70,17 @@ async function loadJSON(file) {
   catch(err) {console.log(err.message)}
 }
 
-// Open a resource directly from a link such as find-services.html?resource=...
+// Opens a saved resource directly from My ParentPath using its JSON file path
 const requestedResource = new URLSearchParams(window.location.search).get("resource");
-if (requestedResource && /^\/JavaScript\/[\w-]+\.JSON$/.test(requestedResource)) {
-	loadJSON(requestedResource);
-	const resourceModal = document.getElementById("ResourceModal");
-	if (resourceModal) {
-		bootstrap.Modal.getOrCreateInstance(resourceModal).show();
-	}
+
+if (requestedResource &&
+    requestedResource.startsWith("/JavaScript/JSON/") &&
+    requestedResource.endsWith(".JSON")) {
+
+    loadJSON(requestedResource);
+
+    const resourceModal = document.getElementById("ResourceModal");
+    if (resourceModal) {
+        bootstrap.Modal.getOrCreateInstance(resourceModal).show();
+    }
 }
