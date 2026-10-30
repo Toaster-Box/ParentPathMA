@@ -1,0 +1,15 @@
+{
+	"category":"Parental Leave & Workplace suppourt ",
+	"org":"Department of Family and Medical Leave DFML",
+	"description":"Paid Leave",
+	"whatThisIs":"This PFML overview will focus on individuals and families you are currently pregnant or expecting a child.  PFML can be broken down into 2 sectors for this case Paid family leave and Paid medical leave. PFML offers up to 20 weeks of paid medical leave, up to 12 weeks of paid family leave to care for a family member or to bond with a child. Keeping in mind there is up to “26 weeks of paid family leave to care for a family member who is a covered service member with a serious health condition that was received” (Mass.gov). PFMl can be taken by any parent expecting a child, adoption included, starting within the first 12 months of  birth,adoption, or placement . ",
+	"link":["https://www.mass.gov/info-details/paid-family-and-medical-leave-pfml-overview-and-benefits"],
+	"relatedLink":["https://calculator.eol.mass.gov/pfml/yourbenefits/”,”https://www.mass.gov/doc/employee-toolkit-for-paid-family-and-medical-leave/download"],
+	"relatedLinkExplanation":["PFML Benefit Calculator”,” Employee Took kit"],
+	"application":["https://www.mass.gov/how-to/how-to-apply-for-paid-family-and-medical-leave-pfml"],
+	"whoItHelps": ["Pregnant or soon to be pregnant individuals who work for a Massachusetts business.","Parents who want to have bonding time with their child who work in Massachusetts"],
+	"whatItHelps":"",
+	"whatToKnow":["There are income requirements however to best assess eligibility as it can be calculated between years and quarters, use their PFMl Benefit Calculator. The listed income eligibility is as follows at least $6,300 (in 2025) or $6,300 (in 2026) during the last 4 completed calendar quarters, and at least 30 times more than how much you are eligible to get each week in benefits, you meet the criteria” (Mass.gov tool kit).","If you are self employed you have to option of opting in by MassTaxConnect.","It is recommended to give your employer at least 30 days notice if possible","You can apply online or by phone"],
+	"lastUpdated":"10/29/2026",
+	"name":"Paid Family and Medical Leave (PFML)"
+}
