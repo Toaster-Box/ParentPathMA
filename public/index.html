@@ -153,58 +153,72 @@
         <!-- Explore Our Services -->
         <div class="row g-3 home-section">
             <h2 class="col-12">Explore Our Services</h2>
+            <p class="col-12 service-instruction d-flex align-items-center gap-2 mb-0">
+                <span class="service-instruction-icon" aria-hidden="true"><i class="bi bi-info-circle-fill"></i></span>
+                <span>Choose a category to get started.</span>
+            </p>
             <!-- Reserves space for service titles so descriptions align across cards nicely -->
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="/html/find-services.html?category=healthcare" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=healthcare" class="card-link service-card-link d-block h-100" aria-labelledby="service-title-healthcare" aria-describedby="service-tip-healthcare">
+                    <span class="service-tooltip" id="service-tip-healthcare" role="tooltip">Find health coverage, medical transportation, and wellness support.</span>
                     <div class="card">
                         <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-healthcare"><i class="bi bi-heart-pulse" aria-hidden="true"></i></span>
-                            <h3 class="card-title service-card-title">Healthcare &amp; Health Insurance</h3>
+                            <h3 class="card-title service-card-title" id="service-title-healthcare">Healthcare &amp; Health Insurance</h3>
                             <p class="card-text">Health coverage, care and wellness support</p>
+                            <span class="service-card-action">Explore resources</span>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="/html/find-services.html?category=benefits" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=benefits" class="card-link service-card-link d-block h-100" aria-labelledby="service-title-benefits" aria-describedby="service-tip-benefits">
+                    <span class="service-tooltip service-tooltip-small-end" id="service-tip-benefits" role="tooltip">Explore food assistance, housing support, and help with household expenses.</span>
                     <div class="card">
                         <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-benefits"><i class="bi bi-wallet" aria-hidden="true"></i></span>
-                            <h3 class="card-title service-card-title">Benefits &amp; Financial Assistance</h3>
+                            <h3 class="card-title service-card-title" id="service-title-benefits">Benefits &amp; Financial Assistance</h3>
                             <p class="card-text">Food, housing and financial assistance</p>
+                            <span class="service-card-action">Explore resources</span>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="/html/find-services.html?category=parental" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=parental" class="card-link service-card-link d-block h-100" aria-labelledby="service-title-parental" aria-describedby="service-tip-parental">
+                    <span class="service-tooltip service-tooltip-tablet-end" id="service-tip-parental" role="tooltip">Learn about parental leave, workplace rights, and support for working parents.</span>
                     <div class="card">
                         <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-parental"><i class="bi bi-briefcase" aria-hidden="true"></i></span>
-                            <h3 class="card-title service-card-title">Parental Leave &amp; Workplace Support</h3>
+                            <h3 class="card-title service-card-title" id="service-title-parental">Parental Leave &amp; Workplace Support</h3>
                             <p class="card-text">Leave, workplace and parent resources</p>
+                            <span class="service-card-action">Explore resources</span>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="/html/find-services.html?category=childcare" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=childcare" class="card-link service-card-link d-block h-100" aria-labelledby="service-title-childcare" aria-describedby="service-tip-childcare">
+                    <span class="service-tooltip service-tooltip-small-end" id="service-tip-childcare" role="tooltip">Find help with childcare costs and early education programs.</span>
                     <div class="card">
                         <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-childcare"><i class="bi bi-people" aria-hidden="true"></i></span>
-                            <h3 class="card-title service-card-title">Childcare &amp; Education</h3>
+                            <h3 class="card-title service-card-title" id="service-title-childcare">Childcare &amp; Education</h3>
                             <p class="card-text">Childcare, learning and school services</p>
+                            <span class="service-card-action">Explore resources</span>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <a href="/html/find-services.html?category=immigrant" class="card-link d-block h-100">
+                <a href="/html/find-services.html?category=immigrant" class="card-link service-card-link d-block h-100" aria-labelledby="service-title-immigrant" aria-describedby="service-tip-immigrant">
+                    <span class="service-tooltip service-tooltip-desktop-end" id="service-tip-immigrant" role="tooltip">Explore English classes, legal assistance, and immigrant support programs.</span>
                     <div class="card">
                         <div class="card-body d-flex flex-column">
                             <span class="service-icon badge-immigrant"><i class="bi bi-globe2" aria-hidden="true"></i></span>
-                            <h3 class="card-title service-card-title">Immigrant &amp; Language Services</h3>
+                            <h3 class="card-title service-card-title" id="service-title-immigrant">Immigrant &amp; Language Services</h3>
                             <p class="card-text">Language access and newcomer support</p>
+                            <span class="service-card-action">Explore resources</span>
                         </div>
                     </div>
                 </a>

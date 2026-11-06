@@ -110,3 +110,77 @@ h2 {
     color: rgb(89, 89, 89);
 }
 
+
+/* Category navigation */
+.service-instruction {
+    color: rgb(89, 89, 89);
+    padding-bottom: 0.5rem;
+}
+.service-instruction-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: rgb(230, 238, 247);
+    color: rgb(25, 63, 108);
+}
+.service-card-link {
+    position: relative;
+    color: rgb(25, 63, 108);
+}
+.service-card-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: rgb(230, 238, 247);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+/* Tooltips float above their cards without changing the layout */
+.service-tooltip {
+    position: absolute;
+    /* calc() places the tooltip above the card (100%) with an extra 0.5rem gap */
+    bottom: calc(100% + 0.5rem);
+    left: 0;
+    z-index: 2;
+    width: 20rem;
+    max-width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: rgb(25, 63, 108);
+    color: white;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    box-shadow: 0 0.25rem 0.5rem rgba(20, 31, 63, 0.15);
+    visibility: hidden;
+    pointer-events: none;
+}
+.service-card-link:focus-visible .service-tooltip {
+    visibility: visible;
+}
+.service-card-link:focus-visible .card {
+    border-color: rgb(25, 63, 108);
+}
+/* Shows the tooltip and highlights the card on devices that support hovering */
+@media (hover: hover) {
+    .service-card-link:hover .service-tooltip {
+        visibility: visible;
+    }
+    .service-card-link:hover .card {
+        border-color: rgb(25, 63, 108);
+        background-color: rgb(245, 248, 252);
+    }
+}
+/* Hides tooltips on devices that don't support hovering */
+@media (hover: none) {
+    .service-tooltip {
+        display: none;
+    }
+}
