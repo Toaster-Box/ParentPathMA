@@ -1,5 +1,3 @@
-//setting all card blocks to not display, no I cant do this in css
-// Hides resource sections with Bootstrap's d-none (display none) so their row layout is preserved
 const IDList = ["HealthCareCardSection","BenefitsCardSection","ParentLeaveCardSection","ChildcareCardSection","ImmigrantCardSectoion"];
 IDList.forEach(id => {
     document.getElementById(id).classList.add('d-none');
@@ -17,7 +15,6 @@ categoryButtons.forEach((button) => {
         categoryButtons.forEach((categoryButton) => {
             categoryButton.classList.remove('selected');
             categoryButton.setAttribute('aria-pressed', 'false');
-            document.getElementById("EmptyCardBox").style.display = "block";
         });
 
         // Hides category sections before showing the selected one
@@ -25,13 +22,13 @@ categoryButtons.forEach((button) => {
             document.getElementById(id).classList.add('d-none');
         });
 
-        // Expands for a selection and restores the compact width when deselected
-        document.getElementById('resourceResults').classList.toggle('showing-resources', !wasSelected);
+        resourceResults.classList.add('showing-resources');
 
         if (!wasSelected) {
             button.classList.add('selected');
             button.setAttribute('aria-pressed', 'true');
-            document.getElementById("EmptyCardBox").style.display = "none";
+        } else {
+            showAllResources();
         }
     });
 });
@@ -49,7 +46,7 @@ document.getElementById("ILSButton").onclick = function() {ServiceSelectionEvent
 //specific service selection
 function ServiceSelectionEvent(id, button) {
     const serviceId = document.getElementById(id);
-    // Keeps Bootstrap's row layout; a deselected category stays hidden and the page returns to the default starting screen
+    // Keeps Bootstrap's row layout; a deselected category stays hidden and the page returns to the full list
     if (button.classList.contains('selected')) {
         serviceId.classList.remove('d-none');
     }
@@ -64,7 +61,6 @@ const searchInput = document.getElementById('resourceSearch');
 const searchResultsRow = document.getElementById('searchResultsRow');
 const searchFeedback = document.getElementById('searchFeedback');
 const resourceResults = document.getElementById('resourceResults');
-const emptyCardBox = document.getElementById('EmptyCardBox');
 
 // Tracks the latest search so earlier requests can be ignored to help prevent results from being displayed after a new search is submitted
 let searchRequest = 0;
@@ -72,15 +68,27 @@ let searchRequest = 0;
 // Saves card locations so category browsing can restore the original order to the page after a search moves them into one row
 const resourceCards = Array.from(document.querySelectorAll('[data-resource-file]')).map((card) => ({
     card: card,
-    parent: card.parentNode,
-    nextSibling: card.nextSibling
+    parent: card.parentNode
 }));
 
-// Returns the same cards to their categories instead of creating copies so the search can be repeated without losing any cards
+// Returns all cards to their original categories in their original order
 function restoreResourceCards() {
     resourceCards.forEach((resource) => {
-        resource.parent.insertBefore(resource.card, resource.nextSibling);
+        resource.parent.appendChild(resource.card);
     });
+}
+
+// Reuse the search row to browse all cards in visible title order.
+const alphabeticalCards = resourceCards.map(({ card }) => card).sort((a, b) =>
+    a.querySelector('.card-title').textContent.trim().localeCompare(
+        b.querySelector('.card-title').textContent.trim()
+    )
+);
+
+function showAllResources() {
+    searchResultsRow.append(...alphabeticalCards);
+    searchResultsRow.classList.remove('d-none');
+    resourceResults.classList.add('showing-resources');
 }
 
 // Cancels pending search results and restores cards for category browsing to work properly
@@ -113,10 +121,9 @@ async function searchResources() {
     });
     IDList.forEach((id) => document.getElementById(id).classList.add('d-none'));
     resourceResults.classList.remove('showing-resources');
-    emptyCardBox.style.display = query ? 'none' : 'block';
 
-    // Empty searches return to the starting screen; fewer than three maybe two characters are too broad for the JSON search to be useful
     if (!query) {
+        showAllResources();
         return;
     }
     if (query.length < 3) {
@@ -192,6 +199,8 @@ document.getElementById('resourceSearchForm').addEventListener('submit', (event)
     event.preventDefault();
     searchResources();
 });
+
+showAllResources();
 
 // Reads the category from the homepage URL and automatically selects its matching button
 const params = new URLSearchParams(window.location.search);
