@@ -80,6 +80,23 @@
     font-weight: 600;
 }
 
+/* Lightly highlights unselected categories when hovered to help promote user interaction */
+.category-button[data-category="healthcare"]:not(.selected):hover {
+    background-color: rgb(252, 240, 244);
+}
+.category-button[data-category="benefits"]:not(.selected):hover {
+    background-color: rgb(240, 248, 242);
+}
+.category-button[data-category="parental"]:not(.selected):hover {
+    background-color: rgb(246, 241, 252);
+}
+.category-button[data-category="childcare"]:not(.selected):hover {
+    background-color: rgb(253, 247, 235);
+}
+.category-button[data-category="immigrant"]:not(.selected):hover {
+    background-color: rgb(239, 247, 253);
+}
+
 /* Selected category colors */
 .category-button.selected[data-category="healthcare"] {
     border: 2px solid rgb(181, 35, 82);
