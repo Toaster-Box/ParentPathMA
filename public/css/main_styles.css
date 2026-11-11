@@ -81,3 +81,20 @@ footer .row{
     height: auto;
     margin-bottom: 0.75rem;
 }
+
+/* Keeps the navbar language selector compact */
+#navbarLanguage {
+    width: 6.5rem;
+}
+
+/* Removes Bootstrap's blue focus highlight */
+#navbarLanguage:focus {
+    border-color: rgb(222, 226, 230);
+    box-shadow: none;
+}
+
+/* Keeps keyboard focus visible with ParentPath's navy color */
+#navbarLanguage:focus-visible {
+    outline: 2px solid rgb(25, 63, 108);
+    outline-offset: 2px;
+}
