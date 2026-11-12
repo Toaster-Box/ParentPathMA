@@ -23,29 +23,7 @@ if (user !== null){
 	getUserInfo(user);
 }
 
-document.getElementById("logInButton").onclick = function() {firebase.auth()
-  .signInWithPopup(provider)
-  .then((result) => {
-    /** @type {firebase.auth.OAuthCredential} */
-    var credential = result.credential;
-
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    // IdP data available in result.additionalUserInfo.profile.
-  }).catch((error) => {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    console.log("Error:" + errorCode + " " + errorMessage)
-  });};
-
-
+//detects when a user signs in or out
 const authObserver = auth.onAuthStateChanged((user) => {
   if (user) {
     getUserInfo(user);
@@ -55,7 +33,8 @@ const authObserver = auth.onAuthStateChanged((user) => {
 	document.getElementById("UserInfoDrop").style.display = "none"
   }
 })
-  
+
+
 function getUserInfo(user){
 	document.getElementById("logInButton").style.display = "none"
 	document.getElementById("UserInfoDrop").style.display = "block"
@@ -67,6 +46,6 @@ document.getElementById("logOutButton").onclick = function() {
   	// Sign-out successful.
 	}).catch(function(error) {
   	// An error happened.
-	console.log(error)
+	  console.log(error)
 	});
 }

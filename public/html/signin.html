@@ -21,7 +21,7 @@
         -->
         
         <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <script defer type="module" src="/JavaScript/firebase.js"></script>
+        <script defer type="module" src="/JavaScript/login.js"></script>
         
         <!-- Development version -->
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
@@ -32,7 +32,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link href="/css/main_styles.css" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="#">
-        <title>Parent Path Home</title>
+        <title>Parent Path Sign in</title>
     </head>
 <body>
     <header>
@@ -40,36 +40,59 @@
         <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" id="navbar">
             <div class="container-fluid">
                 <button class="btn btn-secondary" onclick="history.back()">
-                    
+                    Go back
                 </button>
             </div>
         </nav>
     </header>
     <!-- main page content goes here, aka everything unique to that page -->
     <section class="container-fluid" id="body">
-        <div class="row">
+        <div class="row justify-content-center">
+            <div class="col-3">
+                
+            </div>
             <div class="col">
                 <div class="card">
-  					<h5 class="card-header">Featured</h5>
+  					<h5 class="card-header"><b>Login</b></h5>
   					<div class="card-body">
-						<form>
+						<form id="loginForm">
 							<div class="mb-3">
-  								<label for="exampleInputEmail1" class="form-label">Email address</label>
-  								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  								<label for="loginEmail" class="form-label">Email address</label>
+  								<input type="email" class="form-control" id="loginEmail" autocomplete="on" name="userid" placeholder="email" aria-describedby="emailHelp">
   								<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   							</div>
   							<div class="mb-3">
-  								<label for="exampleInputPassword1" class="form-label">Password</label>
-  								<input type="password" class="form-control" id="exampleInputPassword1">
+  								<label for="loginPassword" class="form-label">Password</label>
+  								<input type="password" name="password" class="form-control" id="loginPassword" placeholder="password">
   							</div>
   							<button type="submit" class="btn btn-primary">Submit</button>
 						</form>
+                        
+                        <form id="signUpForm" style="display: none;">
+							<div class="mb-3">
+  								<label for="signUpEmail" class="form-label">Enter your email address:</label>
+  								<input type="email" class="form-control" id="signUpEmail" autocomplete="on" name="userid" placeholder="email" aria-describedby="emailHelp">
+  								<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  							</div>
+  							<div class="mb-3">
+  								<label for="signUpPassword" class="form-label">Create a Password:</label>
+  								<input type="password" name="password" class="form-control" id="signUpPassword" placeholder="password">
+  							</div>
+  							<button type="submit" class="btn btn-primary" id="signUpButton">Create Account</button>
+						</form>
+                        <br>
+                        <button class="btn" id="loginFormSwitch">Register</button>
+                        <br>
+                        <button class="btn" id="logInGoogleButton">Log in with Google</button>
   					</div>
+                    <small>Logins save your saved resources to the cloud!</small>
 				</div>
+            </div>
+            <div class="col-3">
+                
             </div>
         </div>
     </section>
-    <!-- footer, shared across all pages, responsive -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="/JavaScript/google_translate.js"></script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
