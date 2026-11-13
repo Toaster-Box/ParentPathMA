@@ -22,7 +22,7 @@ const authObserver = auth.onAuthStateChanged((user) => {
 })
 
 document.getElementById("logInGoogleButton").onclick = function() {firebase.auth()
-  .signInWithRedirect(provider)
+  .signInWithPopup(provider)
   .then((result) => {
     /** @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
@@ -32,6 +32,7 @@ document.getElementById("logInGoogleButton").onclick = function() {firebase.auth
     // The signed-in user info.
     var user = result.user;
     // IdP data available in result.additionalUserInfo.profile.
+    history.back();
   }).catch((error) => {
     // Handle Errors here.
     var errorCode = error.code;
