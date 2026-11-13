@@ -2,7 +2,7 @@
 // Hides resource sections with Bootstrap's d-none (display none) so their row layout is preserved
 const IDList = ["HealthCareCardSection","BenefitsCardSection","ParentLeaveCardSection","ChildcareCardSection","ImmigrantCardSectoion"];
 IDList.forEach(id => {
-    //document.getElementById(id).classList.add('d-none');
+    document.getElementById(id).classList.add('d-none');
 });
 
 // Allows one category to be selected at a time
