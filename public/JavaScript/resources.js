@@ -65,9 +65,10 @@ async function loadJSON(file) {
 		saveButton.dataset.category = resourceData.categoryKey || "";
 		saveButton.dataset.url = "/html/find-services.html?resource=" + encodeURIComponent(file);
 	}
-
   }
-  catch(err) {console.log(err.message)}
+  catch(err) {
+    console.log(err +": "+err.message)
+  }
 }
 
 // Opens a saved resource directly from My ParentPath using its JSON file path
