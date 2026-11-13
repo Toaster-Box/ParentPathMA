@@ -1,3 +1,21 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyD91M-LRrbRK4mo_ZyQtZRw4I0Y_zOmFmg",
+  authDomain: "maparentpath.firebaseapp.com",
+  projectId: "maparentpath",
+  storageBucket: "maparentpath.firebasestorage.app",
+  messagingSenderId: "894159735683",
+  appId: "1:894159735683:web:7e066235040761637544b6",
+  measurementId: "G-19DSPE1P5M",
+  databaseURL: "https://maparentpath-default-rtdb.firebaseio.com/"
+};
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const database = firebase.database();
+const auth = firebase.auth();
+const user = firebase.auth().currentUser;
+
 // ParentPath checklist and saved resources
 // Save Resource buttons work on any page that loads this file.
 // The checklist and saved list only run on My ParentPath (checklist.html).
@@ -175,20 +193,50 @@ const resourceContacts = {
     }
 };
 
+//writes to the firebase database
+function writeUserData(userId, save) {
+  firebase.database().ref('users/' + userId).set({
+    savedRes: save
+  });
+}
+/*
+
+*/
 // Saved resources list, shared by the Save Resource buttons and My ParentPath
 function getSaved() {
     try {
-        const saved = JSON.parse(localStorage.getItem(savedKey));
+        let saved = null;
+        if (user){
+            const dbRef = firebase.database().ref();
+            dbRef.child("users").child(userId).get().then((snapshot) => {
+            if (snapshot.exists()) {
+                saved = snapshot.val();
+                console.log(snapshot.val());
+            } else {
+                console.log("No data available");
+            }
+            }).catch((error) => {
+                console.error(error);
+            });
+        }else{
+            saved = JSON.parse(localStorage.getItem(savedKey));
+        }
         return Array.isArray(saved) ? saved : [];
     } catch (error) {
+        console.log(error);
         return [];
     }
 }
 
 function setSaved(saved) {
     try {
-        localStorage.setItem(savedKey, JSON.stringify(saved));
+        if (user){ // if youre a user, it cloud saves
+            writeUserData(user.uid,JSON.stringify(saved))
+        }else{
+            localStorage.setItem(savedKey, JSON.stringify(saved));
+        }
     } catch (error) {
+        console.log(error);
         // Storage blocked, nothing can be saved on this visit
     }
 }
