@@ -2,14 +2,20 @@
 	"category":"Parental Leave & Work place suppourt",
 	"org":"U.S. Department of Labor",
 	"description":"Federal Protection for Family and Medical Leave",
-	"whatThisIs":["This is a federal law providing qualifying employees 12 weeks of unpaid, job-protected leave per year. Two things need to happen for you to qualify, first if you have completed at least one of the following: Have been employed with the company for at least 12 months, or worked  at least 1,250 hours over the last 12 month period. Second, the location of the company at which you work employs 50 or more employees within 75 miles. This usually can come into play for chain locations, as most stores do not employ 50 people however their surrounding areas stores can when combined."],
-	"link":"[https://www.dol.gov/general/topic/benefits-leave/fmla]",
-	"relatedLink":["https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fmlaen.pdf”,”https://www.dol.gov/agencies/whd/fact-sheets/28-fmla"],
-	"relatedLinkExplanation":["Employee Rights UNder FMLA”,“WHD Fact sheet for FMLA"] ,
+	"whatThisIs":["This federal law provides qualifying employees with 12 weeks of unpaid, job-protected leave per year. Two conditions must be met. First, you must have been employed by the company for at least 12 months or worked at least 1,250 hours over the last 12 months. Second, your work location must have 50 or more company employees within 75 miles. This can come into play for chain locations. Most stores do not employ 50 people, but nearby stores may meet that threshold when counted together."],
+	"link":"https://www.dol.gov/general/topic/benefits-leave/fmla",
+	"relatedLink": [
+    "https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fmlaen.pdf",
+    "https://www.dol.gov/agencies/whd/fact-sheets/28-fmla"
+],
+	"relatedLinkExplanation": [
+    "Employee Rights Under FMLA",
+    "WHD Fact Sheet for FMLA"
+	],
 	"application":"",
-	"whoItHelps": ["People and Families living in states that don’t have paid family and medical state programs"],
+	"whoItHelps": ["People and families living in states that don’t have state programs for paid family and medical leave"],
 	"whatItHelps":"",
-	"whatToKnow":["To be clear Massachusetts has its own state laws for paid family leave, if you are looking for paid family/medical leave please visit the profile titled “PFML (Paid Family and Medical Leave)","FMLA applies for people who need to take time off: for the birth of a child, the placement of child in the case of adoptions, to take care of a family member due to a serious medical condition, and to take medical leave for the employee for a serious medical condition","As this is federal law not state or federal program there is no ‘application’ process, so far as you are eligible you can request the time off directly from your employer. Depending on the reason your employer can request certification from a health care provider, however you do not have to disclose your health condition, look at the Employe Rights pamphlet for my discussion and information about how application and certification request work"],
+	"whatToKnow":["Massachusetts has its own state laws for paid family leave. If you're looking for paid family or medical leave, please visit the profile titled “PFML (Paid Family and Medical Leave)”.", "FMLA applies to people who need time off for the birth of a child, the placement of a child for adoption, the care of a family member with a serious medical condition, or their own serious medical condition.", "Because this is a federal law and not a state or federal program, there is no application process. If you're eligible, you can request time off directly from your employer. Depending on the reason, your employer can request certification from a health care provider. However, you do not have to disclose your health condition. See the Employee Rights pamphlet for more information about how requests for leave and certification work."],
 	"lastUpdated":"10/9/2026",
 	"name":"Family and Medical Leave (FMLA)"
 }

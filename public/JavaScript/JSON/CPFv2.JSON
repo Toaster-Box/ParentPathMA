@@ -1,15 +1,15 @@
 {
 	"category":"Childcare & Education",
 	"org":"CheckPregnancy",
-	"description":"A list of foods checked againist ACOG, FDA, and WHO guidelines. That's the American College of Obstetricians and Gynecologists, Food Drug Administration, and World Health Organization.",
-	"whatThisIs":["This specific feature is one from the CheckPregnancy that is a compilied list of foods and their risk and risk level to pregnancy backed by at least one of the following organizations: American College of Obstetricians and Gynecologists, Food Drug Administration, and World Health Organization."],
+	"description":"A list of foods checked against ACOG, FDA, and WHO guidelines. That's the American College of Obstetricians and Gynecologists, the Food and Drug Administration, and the World Health Organization.",
+	"whatThisIs":["This CheckPregnancy feature lists foods and their risk levels during pregnancy, based on guidance from at least one of the following organizations: the American College of Obstetricians and Gynecologists, the Food and Drug Administration, and the World Health Organization."],
 	"link":["https://www.checkpregnancy.com/food-safety"],
 	"relatedLink":"",
 	"relatedLinkExplanation":"",
 	"application":"",
-	"whoItHelps": ["Parents and family looking for a website to quickly check the risk level of a certain foods backed by the affermentioned organizations","Those experincing pregnancy looking for simplier explanantions of why certain foods in higher doses are catigerized as risky."],
+	"whoItHelps": ["Parents and families who want to quickly check the risk level of certain foods using guidance from the organizations listed above", "People who are pregnant and want simpler explanations of why certain foods are categorized as risky in larger amounts"],
 	"whatItHelps":"",
-	"whatToKnow":["This website while helpful should not replace the advice of a medical professional. This website uses information from trusted sites to categorize their list but is not the site themselves, if you are concerned they do not have the correct information please ask your health care professional or refernce the orginzations website thier claiming advises the food profile."],
+	"whatToKnow":["While helpful, this website should not replace the advice of a medical professional. It uses information from trusted sites to categorize foods and is separate from those sites. If you're concerned about the accuracy of a food profile, ask your health care professional or consult the website of the organization cited in that profile."],
 	"lastUpdated":"10/9/2026",
 	"name":"CheckPregnancy - Foods"
 }
